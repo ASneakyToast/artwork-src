@@ -6,12 +6,16 @@ export default {
   target: 'static',
 
   router: {
-    base: '/artwork-prod/'
+    base: '/artwork-prod.github.io/'
+  },
+
+  generate: {
+    dir: '../dist/'
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Artwork',
+    title: 'Artwork - Joel Lithgow',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

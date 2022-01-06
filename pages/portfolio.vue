@@ -39,7 +39,7 @@
             :key="artwork.id"
             :id="artwork.slug">
           <aside class="item-center">
-            <img :src="`/assets/artwork/${ artwork.slug }/original.jpg`"
+            <img :src="require( `/assets/artwork/${ artwork.slug }/original.jpg` )"
                   :alt="artwork.alt"
                   :title="artwork.alt">
           </aside>

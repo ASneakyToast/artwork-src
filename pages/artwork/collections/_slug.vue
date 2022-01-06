@@ -34,7 +34,7 @@
         <article v-for="artwork of artworks"
                  :key="artwork.id"
                  class="layout-item">
-          <img :src="`/assets/artwork/${ artwork.slug }/original.jpg`"
+          <img :src="require( `/assets/artwork/${ artwork.slug }/original.jpg` )"
                  class=""
                  :alt="artwork.alt"
                  :title="artwork.alt">

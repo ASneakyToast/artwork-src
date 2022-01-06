@@ -7,15 +7,16 @@ flavor: An avatar makes its way towards the green zone.
 
 date: 2020-05-05
 size: 24" x 18"
-med-textium:
-- printmaking
+
+medium: Printmedia
 materials:
 - ink
-- stamps
 - paper
+tools:
+- rubber stamps
 
 collections:
-- Junior-Review
+- 2020 Portfolio
 
 featured: false
 published: true

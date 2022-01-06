@@ -7,17 +7,20 @@ alt: Four young looking alien-like creatures sit around a large purple sphere wi
 
 date: 2021-12-01
 size: 19" x 13"
-medium:
-- printmedia
+
+medium: Printmedia
 materials:
 - ink
 - paper
 - pen
 - wires
+tools:
+- silkscreen
+- plotter
 
 collections:
 - Screen Paintings
-- Junior-Review
+- 2021 Portfolio
 
 featured: true
 published: true

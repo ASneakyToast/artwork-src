@@ -7,16 +7,18 @@ flavor: Connected? No, it's feeding off those planetary resources.
 
 date: 2020-11-16
 size: 24" x 16" x 12"
-medium:
-- sculpture
+
+medium: Sculpture
 materials:
 - wires
 - rocks
 - plaster
 - metal
+tools:
+- dremel
 
 collections:
-- Junior-Review
+- 2020 Portfolio
 
 featured: false
 published: true

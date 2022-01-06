@@ -7,15 +7,19 @@ alt: An image of people in VR gear and an image of a quantum computer sit on opp
 
 date: 2021-11-08
 size: 19" x 13"
-medium:
-- printmedia
+
+medium: Printmedia
 materials:
 - thermal sticker
 - pen
 - paper
+tools:
+- plotter
+- thermal printer
+- mold & deckle
 
 collections:
-- Junior-Review
+- 2021 Portfolio
 
 featured: true
 published: true

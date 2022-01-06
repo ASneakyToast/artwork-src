@@ -11,17 +11,21 @@ alt: A figure sits with its eyes closed and holding the outline of a sphere, the
 
 date: 2021-10-26
 size: 19" x 13"
-medium:
-- printmaking
+
+medium: Printmedia
 materials:
 - ink
 - thermal sticker
 - pen
 - paper
+tools:
+- silkscreen
+- plotter
+- thermal sticker
 
 collections:
-- Junior-Review
 - Screen Paintings
+- 2021 Portfolio
 
 featured: false
 published: true

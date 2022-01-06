@@ -21,7 +21,8 @@
               :key="artwork.id">
 
             <section class="inline">
-              <NuxtLink :to="{ path: '/portfolio', hash: `#${ artwork.slug }` }">
+              <!-- Hyperlink instead of link <NuxtLink :to="{ path: '/portfolio', hash: `#${ artwork.slug }` }"> -->
+              <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
                 <h4>{{ artwork.title }}</h4>
               </NuxtLink>
               <p>( {{ artwork.date | formatDate }} )</p>
@@ -39,9 +40,11 @@
             :key="artwork.id"
             :id="artwork.slug">
           <aside class="item-center">
-            <img :src="require( `/assets/artwork/${ artwork.slug }/original.jpg` )"
-                  :alt="artwork.alt"
-                  :title="artwork.alt">
+            <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
+              <img :src="require( `/assets/artwork/${ artwork.slug }/original.jpg` )"
+                    :alt="artwork.alt"
+                    :title="artwork.alt">
+            </NuxtLink>
           </aside>
           <main class="layout-item well">
             <header>

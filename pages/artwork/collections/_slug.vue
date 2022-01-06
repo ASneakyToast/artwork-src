@@ -34,10 +34,12 @@
         <article v-for="artwork of artworks"
                  :key="artwork.id"
                  class="layout-item">
-          <img :src="require( `/assets/artwork/${ artwork.slug }/original.jpg` )"
-                 class=""
-                 :alt="artwork.alt"
-                 :title="artwork.alt">
+          <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
+            <img :src="require( `/assets/artwork/${ artwork.slug }/original.jpg` )"
+                   class=""
+                   :alt="artwork.alt"
+                   :title="artwork.alt">
+          </NuxtLink>
         </article>
       </section>
 

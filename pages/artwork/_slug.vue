@@ -26,9 +26,8 @@
                :title="artwork.alt">
         </section>
 
-        <section v-else>
+        <section v-else class="item-center">
           <img :src="require( `~/assets/artwork/${ artwork.slug }/original.jpg` )"
-                class="item-center"
                 :alt="artwork.alt"
                 :title="artwork.alt">
         </section>
@@ -105,6 +104,7 @@
 
       <hr></hr>
 
+      <!-- not used yet, has a bug!
       <section id="pagination" class="layout-block row">
         <section>
           <p v-if="prev">Previous:
@@ -121,6 +121,7 @@
           </p>
         </section>
       </section>
+      -->
 
     </div>
 

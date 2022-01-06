@@ -13,17 +13,37 @@
         <h1 v-if="artwork.title">{{ artwork.title }}</h1>
         <h1 v-else><i>Untitled</i></h1>
         <p v-if="artwork.flavor">{{ artwork.flavor }}</p>
-        <img :src="`/assets/artwork/${ artwork.slug }/original.jpg`"
-              class="item-center"
-              :alt="artwork.alt"
-              :title="artwork.alt">
+
+        <section v-if="artwork.detail_images" class="overflow-x">
+          <img :src="`/assets/artwork/${ artwork.slug }/original.jpg`"
+                class="item-center"
+                :alt="artwork.alt"
+                :title="artwork.alt">
+          <img v-for="number of artwork.detail_images"
+               :key="number"
+               :src="`/assets/artwork/${ artwork.slug }/detail-${ number }.jpg`"
+               :alt="artwork.alt"
+               :title="artwork.alt">
+        </section>
+
+        <section v-else>
+          <img :src="`/assets/artwork/${ artwork.slug }/original.jpg`"
+                class="item-center"
+                :alt="artwork.alt"
+                :title="artwork.alt">
+        </section>
+
       </section>
 
+
       <hr></hr>
+
 
       <NuxtContent :document="artwork" class="layout-block"/>
 
+
       <hr></hr>
+
 
       <article id="data" class="layout-block">
         <section class="layout-item">
@@ -60,6 +80,11 @@
           <h5>Created From</h5>
           <p v-if="artwork.materials">{{ artwork.materials }}</p>
           <p v-else>Unknown materials</p>
+        </section>
+        <section class="layout-item">
+          <h5>Created With</h5>
+          <p v-if="artwork.tools">{{ artwork.tools }}</p>
+          <p v-else>Unknown tools</p>
         </section>
         <section class="layout-item">
           <h5>Apart Of</h5>
@@ -143,6 +168,13 @@ export default {
 <style>
 #footer {
   justify-content: center;
+}
+
+.overflow-x {
+  overflow-x: scroll;
+  display: flex;
+  gap: 24px;
+  padding: 16px;
 }
 
 </style>

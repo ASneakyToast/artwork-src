@@ -38,9 +38,8 @@
         <article v-for="artwork of artworks"
             :key="artwork.id"
             :id="artwork.slug">
-          <aside>
+          <aside class="item-center">
             <img :src="`/assets/artwork/${ artwork.slug }/original.jpg`"
-                  class="item-center"
                   :alt="artwork.alt"
                   :title="artwork.alt">
           </aside>
@@ -67,7 +66,6 @@
           <br></br>
 
         </article>
-
 
       </section>
 

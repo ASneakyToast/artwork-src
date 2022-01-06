@@ -76,7 +76,7 @@ export default{
         }
       })
 
-      let collections = [ ...new Set( all_collections.flat( 1 ) ) ];
+      let collections = [ ...new Set( all_collections.flat( 1 ) ) ].sort();
       console.log( collections )
 
       return { artworks, collections }

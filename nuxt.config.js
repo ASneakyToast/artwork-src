@@ -13,6 +13,13 @@ export default {
     dir: '../dist/'
   },
 
+  responsiveLoader: {
+    min: 640,
+    max: 2000,
+    steps: 3,
+    quality: 65
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Artwork - Joel Lithgow',
@@ -52,6 +59,7 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    'nuxt-responsive-loader'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

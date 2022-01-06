@@ -15,19 +15,19 @@
         <p v-if="artwork.flavor">{{ artwork.flavor }}</p>
 
         <section v-if="artwork.detail_images" class="overflow-x">
-          <img :src="require( `~/assets/artwork/${ artwork.slug }/original.jpg` )"
+          <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
                 class="item-center"
                 :alt="artwork.alt"
                 :title="artwork.alt">
           <img v-for="number of artwork.detail_images"
                :key="number"
-               :src="require( `~/assets/artwork/${ artwork.slug }/detail-${ number }.jpg` )"
+               :srcset="require( `~/assets/artwork/${ artwork.slug }/detail-${ number }.jpg` ).srcSet"
                :alt="artwork.alt"
                :title="artwork.alt">
         </section>
 
         <section v-else class="item-center">
-          <img :src="require( `~/assets/artwork/${ artwork.slug }/original.jpg` )"
+          <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
                 :alt="artwork.alt"
                 :title="artwork.alt">
         </section>

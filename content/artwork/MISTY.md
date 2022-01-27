@@ -18,8 +18,6 @@ tools:
 collections:
 - 2021 Portfolio
 
-detail_images: 1
-
 featured: true
 published: true
 ---

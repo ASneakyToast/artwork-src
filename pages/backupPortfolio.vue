@@ -2,14 +2,14 @@
   <div class="layout-site">
 
     <section class="layout-block">
-      <h5><NuxtLink to="/artwork">/ Artwork</NuxtLink></h5>
+      <h5><NuxtLink to="/">/ Home</NuxtLink></h5>
     </section>
 
 
     <div class="layout-page">
       
       <section class="layout-block">
-        <h1>{{ params.slug }}</h1>
+        <h1>Portfolio</h1>
       </section>
 
       <hr></hr>
@@ -78,20 +78,18 @@
   </div>
 </template>
 
-
-
 <script>
 export default {
   async asyncData({ $content, params }) {
     try {
 
       const artworks = await $content( "artwork" )
-        .where({ collections: { $contains: params.slug } })
-        .only([ "id", "title", "slug", "date", "flavor" ])
+        .where({ featured: true })
+        //.only([ "title", "slug", "date", "size", "medium", "materials", "description" ])
         .sortBy( "title", "asc" )
         .fetch()
 
-      return { artworks, params }
+      return { artworks }
 
     } catch ( err ) {
       error({
@@ -108,8 +106,6 @@ export default {
   }
 }
 </script>
-
-
 
 <style>
 

@@ -14,6 +14,14 @@
 
       <hr></hr>
 
+      <!--
+      <section class="layout-block">
+        <h3>Digital Gallery</h3>
+        <NuxtLink to="/artwork/showcase">Showcase</NuxtLink></h4>
+      </section>
+      -->
+
+      <!--
       <section class="layout-block">
         <h3>Collections</h3>
         <ul>
@@ -22,6 +30,7 @@
               Current Portfolio
             </NuxtLink>
           </li>
+
           <li v-for="collection of collections"
               :key="collection.id">
             <NuxtLink :to="{ name: 'artwork-collections-slug', params: { slug: collection } }">
@@ -30,6 +39,7 @@
           </li>
         </ul>
       </section>
+      -->
 
       <section class="layout-block">
         <h3>All Artwork</h3>

@@ -7,13 +7,8 @@
     <div class="layout-page">
 
       <section class="layout-item">
-        <h3><NuxtLink to="/portfolio">Portfolio</NuxtLink></h3>
-        <p>- My current work</p>
-      </section>
-
-      <section class="layout-item">
         <h3><NuxtLink to="/artwork">Artwork</NuxtLink></h3>
-        <p>- All work that I stand by today.</p>
+        <p>Fine art and conceptual work.</p>
       </section>
 
       <!-- No archive on mvp

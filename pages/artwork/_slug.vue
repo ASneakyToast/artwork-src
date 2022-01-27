@@ -14,6 +14,7 @@
         <h1 v-else><i>Untitled</i></h1>
         <p v-if="artwork.flavor">{{ artwork.flavor }}</p>
 
+        <!--
         <section v-if="artwork.detail_images" class="overflow-x">
           <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
                 class="item-center"
@@ -25,8 +26,9 @@
                :alt="artwork.alt"
                :title="artwork.alt">
         </section>
+        -->
 
-        <section v-else class="item-center">
+        <section class="item-center">
           <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
                 :alt="artwork.alt"
                 :title="artwork.alt">
@@ -122,6 +124,7 @@
         </section>
       </section>
       -->
+      
 
     </div>
 

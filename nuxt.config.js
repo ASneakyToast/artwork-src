@@ -7,6 +7,7 @@ export default {
 
   router: {
     base: '/artwork-prod.github.io/'
+    //base: '/www.jlithgow.com/'
   },
 
   generate: {

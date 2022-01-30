@@ -97,6 +97,16 @@ img {
   grid-template-columns: 1fr 1fr;
 }
 
+.haskey {
+  grid-template-columns: auto 1fr;
+}
+
+.card {
+  border: 1px solid lightgray;
+  border-radius: 16px;
+  padding: 24px;
+}
+
 .item-right {
   justify-self: right;
 }

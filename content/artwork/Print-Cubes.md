@@ -5,7 +5,7 @@ description: My first conceptual screenprint, exploring variation within a print
 alt: An isometric cube where each side could be one of three different pieces.
 flavor: Instructions these days are never linear.
 
-date: 2019
+date: 01-01-2019
 size: 15" x 20"
 
 medium: Printmedia

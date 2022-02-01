@@ -6,8 +6,9 @@ export default {
   target: 'static',
 
   router: {
-    base: '/artwork-prod.github.io/'
     //base: '/www.jlithgow.com/'
+    //base: '/artwork-prod.github.io/'
+    base: '/'
   },
 
   generate: {

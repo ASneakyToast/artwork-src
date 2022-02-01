@@ -1,176 +1,63 @@
 <template>
   <div class="layout-site">
-
     <section class="layout-block">
-      <h5><NuxtLink to="/">/ Home</NuxtLink></h5>
+      <h5><NuxtLink to="/">jlithgow.com</NuxtLink></h5>
     </section>
 
-    <div class="layout-page">
+    <div class="layout-page grid-plate">
 
-      <section class="layout-block">
+      <aside class="layout-block">
         <h1>Artwork</h1>
-        <p>Here you will find all my artwork that not only made the cut but I still find relevant today.</p>
-      </section>
 
-      <hr></hr>
-
-      <!--
-      <section class="layout-block">
-        <h3>Digital Gallery</h3>
-        <NuxtLink to="/artwork/showcase">Showcase</NuxtLink></h4>
-      </section>
-      -->
-
-      <!--
-      <section class="layout-block">
-        <h3>Collections</h3>
-        <ul>
-          <li>
-            <NuxtLink to="portfolio">
-              Current Portfolio
-            </NuxtLink>
-          </li>
-
-          <li v-for="collection of collections"
-              :key="collection.id">
-            <NuxtLink :to="{ name: 'artwork-collections-slug', params: { slug: collection } }">
-              {{ collection }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </section>
-      -->
-
-      <!--
-      <section class="layout-block">
-        <h3>All Artwork</h3>
-        <ul class="listing-list">
-          <li v-for="artwork of artworks"
-              :key="artwork.id">
-            <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
-              {{ artwork.title }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </section>
-      -->
-
-      <section class="layout-block">
-        <section v-for="( year, index ) of artworkByYears"
-                 :key="index"
-                 class="haskey layout-item">
-          <h3>{{ unique_years[ index ] }}</h3>
-          <ul class="layout-item">
-            <li v-for="artwork of year"
-                :key="artwork.id">
-              <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
-                {{ artwork.title }}
-              </NuxtLink>
-            </li>
-          </ul>
-        </section>
         <hr></hr>
-      </section>
+
+        <ul class="layout-block">
+          <li>
+            <h4><NuxtLink to="/artwork/current">Current Work</NuxtLink></h4>
+          </li>
+          <li>
+            <h4><NuxtLink to="/artwork/archive">Archive</NuxtLink></h4>
+          </li>
+        </ul>
+
+        <!--
+        <!-- I like this for categories but not for my current work. I think this page should really be focused on detail images n shit. -->
+        <section class="layout-block grid-small">
+          <article v-for="artwork of artworks"
+              :key="artwork.id">
+            <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }" class="layout-item">
+              <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
+                    :alt="artwork.alt"
+                    :title="artwork.alt"
+                    class="square">
+              <h4>{{ artwork.title }}</h4>
+            </NuxtLink>
+          </article>
+        </section>
+        -->
+
+        <!-- No archive on mvp
+        <section class="layout-item">
+          <h3><NuxtLink to="/archive">Archive</NuxtLink></h3>
+          <p>- Everything from my favorite collections to shitty one-offs.</p>
+        </section>
+        -->
+      </aside>
+
+      <main>
+        <img :srcset="require( `~/assets/pictures/studioshot.jpg` ).srcSet"
+             alt="A photo of Joel Lithgow making art."
+             title="Joel Lithgow"
+             class="cover">
+      </main>
 
     </div>
   </div>
 </template>
 
-<!-- Date templating
-          <li v-for="artwork of artworks"
-              :key="artwork.id">
-            {{ artwork.date | formatDate }} | 
-            <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
-              {{ artwork.title }}
-            </NuxtLink>
-          </li>
--->
-
 <script>
-export default{
-  async asyncData({ $content, params, error }) {
-    try {
-
-      const artworks = await $content({ deep: true })
-        .where({ dir: `/artwork` })
-        .only([ "title", "slug", "collections", "date" ])
-        //.sortBy( "title", "asc" )
-        .sortBy( "date", "desc" )
-        .fetch()
-
-      let all_years = [];
-      artworks.forEach( artwork => {
-        all_years.push( new Date( artwork.date ).getFullYear() );
-      });
-      let unique_years = [ ...new Set( all_years.flat( 1 ) ) ].sort();
-      unique_years = unique_years.sort().reverse(); // From newest to oldest
-      console.log( unique_years );
-
-      /*
-      let artworkByYears = [];
-      unique_years.forEach( ( year, index ) => {
-        artworkByYears[ index ] = [];
-        artworks.forEach( artwork => {
-          //console.log( new Date( artwork.date ).getFullYear() );
-          //console.log( new Date( year ).getFullYear() );
-          //console.log( year );
-          if ( new Date( artwork.date ).getFullYear() == year ) {
-            artworkByYears[ index ].push( artwork );
-          }
-        })
-      });
-      console.log( artworkByYears );
-      console.log( artworkByYears[ "2020" ] );
-      */
-
-      let artworkByYears = [];
-      unique_years.forEach( ( year, index ) => {
-        artworkByYears[ index ] = [];
-        artworks.forEach( artwork => {
-          if ( new Date( artwork.date ).getFullYear() == year ) {
-            artworkByYears[ index ].push( artwork );
-          }
-        })
-      });
-      console.log( artworkByYears );
-      console.log( artworkByYears[ "2020" ] );
-
-      let all_collections = [];
-      artworks.forEach( artwork => {
-        if ( Array.isArray( artwork.collections ) ) {
-          artwork.collections.forEach( collection => {
-            all_collections.push( collection )
-          })
-        } else if ( artwork.collections instanceof String ) {
-          all_collections.push( artwork.collections )
-        } else if ( artwork.collections == undefined ) {
-          // Does not have a collection, ignore.
-        } else {
-          console.log( "error: something wrong with artwork collection:" )
-          console.log( artwork );
-        }
-      });
-      let collections = [ ...new Set( all_collections.flat( 1 ) ) ].sort();
-      console.log( collections );
-
-      //return { artworks, collections, years }
-      return { artworks, collections, unique_years, artworkByYears }
-    
-    } catch ( err ) {
-      error({
-        statusCode: 404,
-        message: "Page could not be found or had issues loading.",
-      })
-    }
-  },
-  filters: {
-    formatDate: function ( date ) {
-      const options = { year: "numeric", month: "numeric", day: "numeric" };
-      return new Date( date ).toLocaleDateString( "en", options );
-    }
-  }
+export default {
+  // Make photo load random artwork or content every time.
+  // Or make a specific photo ( which I think I like more )
 }
 </script>
-
-<style>
-</style>

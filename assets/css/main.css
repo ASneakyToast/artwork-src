@@ -7,6 +7,26 @@ p, li {
   font-family: Serif;
 }
 
+h1 {
+  font-size: 1.75em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.33em;
+}
+
+h4, p, li {
+  font-size: 1.125em;
+}
+
+h5, h6 {
+  font-size: 1em;
+}
+
 
 /* ELEMENTS */
 
@@ -19,6 +39,10 @@ hr {
   border: 1px solid darkSlateGray
 }
 
+ul {
+  padding-left: 24px;
+}
+
 img {
   max-width: 100%;
   max-height: 90vh;
@@ -27,9 +51,17 @@ img {
   margin: auto;
 }
 
+img.cover {
+  min-height: 100%;
+  object-fit: cover;
+}
 
-@media only screen and ( max-width: 600px ) {
+button {
+  cursor: pointer;
+}
 
+
+@media only screen and ( max-width: 640px ) {
   .layout-site {
     display: grid;
     grid-gap: 16px;
@@ -42,9 +74,15 @@ img {
     grid-gap: 16px;
   }
 
+  .layout-section {
+    display: grid;
+    grid-gap: 24px;
+  }
+
   .layout-block {
     display: grid;
     grid-gap: 16px;
+    height: fit-content;
   }
   .nuxt-content {
     display: grid;
@@ -56,9 +94,118 @@ img {
     grid-gap: 8px;
   }
 
+  .layout-detail {
+    display: grid;
+    grid-gap: 4px;
+  }
+
+  .grid-plate {
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .grid-plate > main {
+    grid-row: 1 / span 2;
+  }
+
+  .grid-small {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .big-small--featured {
+    grid-column: span 2;
+  }
+
+  .grid-big {
+    grid-template-columns: 1fr;
+  }
+
+  .big-grid--featured {
+    grid-row: 1 / span 2;
+  }
+
+  .haskey {
+    grid-template-areas: 'main aside';
+  }
+
+  .haskey > aside {
+    grid-area: aside;
+    justify-self: right;
+  }
+
+  .haskey > main {
+    grid-area: main;
+  }
+
 }
 
-@media only screen and ( min-width: 600px ) {
+
+@media only screen and ( max-width: 800px ) and ( min-width: 640px ) {
+
+  .layout-site {
+    display: grid;
+    grid-gap: 24px;
+    margin: 24px;
+  }
+
+  .layout-page {
+    padding: 32px;
+    display: grid;
+    grid-gap: 24px;
+  }
+
+  .layout-section {
+    display: grid;
+    grid-gap: 24px;
+  }
+
+  .layout-block {
+    display: grid;
+    grid-gap: 16px;
+    height: fit-content;
+  }
+  .nuxt-content {
+    display: grid;
+    grid-gap: 16px;
+  }
+
+  .layout-item {
+    display: grid;
+    grid-gap: 8px;
+  }
+
+  .layout-detail {
+    display: grid;
+    grid-gap: 4px;
+  }
+
+  .grid-plate {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .grid-plate > main {
+    grid-column: span 2;
+  }
+
+  .grid-small {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .big-small--featured {
+    grid-column: span 2;
+  }
+
+  .grid-big {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .big-grid--featured {
+    grid-column: 1 / span 2;
+  }
+
+}
+
+
+@media only screen and ( min-width: 800px ) {
 
   .layout-site {
     display: grid;
@@ -72,9 +219,16 @@ img {
     grid-gap: 32px;
   }
 
+  .layout-section {
+    display: grid;
+    grid-gap: 32px;
+    grid-auto-rows: min-content;
+  }
+
   .layout-block {
     display: grid;
     grid-gap: 24px;
+    height: fit-content;
   }
   .nuxt-content {
     display: grid;
@@ -86,6 +240,42 @@ img {
     grid-gap: 8px;
   }
 
+  .layout-detail {
+    display: grid;
+    grid-gap: 4px;
+  }
+
+  .grid-plate {
+    /* grid-template-columns: 1fr 1fr 1fr; wasn't the issue */
+    grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
+  }
+
+  .grid-plate > main {
+    grid-column: span 2;
+  }
+
+  .grid-small {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .big-small--featured {
+    grid-column: 1 / span 2;
+  }
+
+  .grid-big {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .big-grid--featured {
+    grid-column: 1 / span 2;
+  }
+
+}
+
+
+.square {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 .inline {
@@ -94,17 +284,26 @@ img {
 }
 
 .row {
-  grid-template-columns: 1fr 1fr;
-}
-
-.haskey {
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr auto;
 }
 
 .card {
   border: 1px solid lightgray;
   border-radius: 16px;
   padding: 24px;
+  transition: border 200ms;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  color: black;
+}
+
+.card:hover {
+  border: 1px solid #0000EE;
+  cursor: pointer;
+}
+
+.card:visited {
+  border: 1px solid #551A8B;
 }
 
 .item-right {
@@ -113,4 +312,9 @@ img {
 
 .item-center {
   justify-self: center;
+}
+
+.well {
+  margin: 24px;
+  height: fit-content;
 }

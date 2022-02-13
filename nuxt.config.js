@@ -17,9 +17,10 @@ export default {
 
   responsiveLoader: {
     min: 640,
-    max: 2000,
+    max: 1240,
     steps: 3,
-    quality: 65
+    quality: 65,
+    placeholder: true
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head

@@ -9,7 +9,7 @@
     <div class="layout-page grid-plate">
 
       <main class="layout-block">
-        <section class="layout-block">
+        <section id="header" class="layout-block">
           <h1>{{ exhibition.showTitle }}</h1>
         </section>
 
@@ -31,7 +31,7 @@
         </section>
       </main>
 
-      <aside class="layout-block">
+      <aside v-if="exhibition.calendar != undefined" class="layout-block">
         <a :href="'//' + `${ exhibition.calendar }`" target="_blank" rel="noreferrer noopener">
           <article @click="saveCal" class="layout-block card">
             <!--
@@ -70,3 +70,10 @@ export default {
   }
 }
 </script>
+
+<style>
+#header {
+  background-image: url( "~/assets/exhibitions/Senior-Show/cover.jpg");
+  min-height: 20vh;
+}
+</style>

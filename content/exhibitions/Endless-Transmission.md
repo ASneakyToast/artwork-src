@@ -1,6 +1,6 @@
 ---
 showTitle: Joel Lithgow - Thesis Show
-galleryName: CCA Hubble Street Galleries
+galleryName: CCA - Hubble Street Galleries
 
 description: "More information coming soon."
 

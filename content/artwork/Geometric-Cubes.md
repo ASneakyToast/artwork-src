@@ -1,5 +1,5 @@
 ---
-title: Print Cubes
+title: Geometric Cubes
 
 description: My first conceptual screenprint, exploring variation within a print through it's procedure.
 alt: An isometric cube where each side could be one of three different pieces.
@@ -17,6 +17,8 @@ tools:
 
 collections:
 - 2019 Portfolio
+exhibitions:
+- 2020 Yozo Hamaguchi Scholarship Exhibition
 
 featured: false
 published: true

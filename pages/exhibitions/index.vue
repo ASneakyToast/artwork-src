@@ -19,9 +19,14 @@
         <article v-for="exhibition of exhibitions"
                  :key="exhibition.id">
           <NuxtLink :to="{ name: 'exhibitions-slug', params: { slug: exhibition.slug } }"
-                    class="layout-block card"
+                    class="layout-block card exhibition"
                     :class="{ 'big-grid--featured': exhibition.featured }">
 
+          <!--
+            <img :srcset="require( `~/assets/exhibitions/${ exhibition.slug }/cover.jpg` ).srcSet"
+                  :alt="exhibition.alt"
+                  :title="exhibition.alt">
+          -->
             <section class="layout-item row">
               <main class="layout-item">
                 <h3>{{ exhibition.showTitle }}</h3>
@@ -74,7 +79,7 @@ export default {
       const exhibitions = await $content( "exhibitions" )
         .where({ published: true })
         .only([ "showTitle", "description", "featured", "slug", "galleryName", "date", "location" ])
-        .sortBy( "date", "desc" )
+        .sortBy( "date", "asc" )
         .fetch()
 
       return { exhibitions }
@@ -88,3 +93,14 @@ export default {
   }
 }
 </script>
+
+
+
+<style>
+@container ( min-width: 600px ) {
+  .exhibition {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}
+</style>

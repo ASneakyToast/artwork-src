@@ -34,6 +34,7 @@
           <aside class="item-center">
             <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
               <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
+                   data-src="..."
                    :alt="artwork.alt"
                    :title="artwork.alt" />
             </NuxtLink>

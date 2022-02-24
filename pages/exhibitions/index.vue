@@ -54,10 +54,6 @@
             </section>
             -->
 
-            <section class="layout-item">
-              <p>{{ exhibition.description }}</p>
-            </section>
-
           </NuxtLink>
         </article>
 

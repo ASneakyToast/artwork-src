@@ -8,42 +8,47 @@
 
     <div class="layout-page grid-plate">
 
-      <main class="layout-block">
-        <section id="header" class="layout-block">
-          <h1>{{ exhibition.showTitle }}</h1>
+
+      <main class="layout-section">
+        <section id="header" class="layout-block row">
+          <section class="layout-block">
+            <h1>{{ exhibition.showTitle }}</h1>
+            <a :href="'//' + `www.googlemaps.com/maps/search/?api=1&query=${ exhibition.location }`" target="_blank" rel="noreferrer noopener">
+              <h3>@ {{ exhibition.galleryName }}</h3>
+            </a>
+          </section>
+          <h3 class="item-right">{{ exhibition.date }}</h3>
         </section>
 
         <hr></hr>
 
-        <section class="layout-item">
-          <h3>{{ exhibition.date }}</h3>
-          <!--
-          <a href="`http://www.googlemaps.com/maps/search/?api=1&query=${ exhibition.location }`" target="_blank" rel="noreferrer noopener">
-            <p>{{ exhibition.galleryName }}</p>
-          </a>
-          <NuxtLink :to="{ name: 'Google Maps', path: '/maps', beforeEnter() { location.href = '`https://www.googlemaps.com/maps/search/?api=1&query=${ exhibition.location }`' } }" target="_blank" rel="noreferrer noopener">
-            <p>{{ exhibition.galleryName }}</p>
-          </NuxtLink>
+        <div class="layout-block">
+          <NuxtContent :document="exhibition" class="layout-block"/>
+
+          <!-- when this data was static and not in content body
+          <section v-if="exhibition.description" class="layout-item">
+            <h6>Description:</h6>
+            <p>{{ exhibition.description }}</p>
+          </section>
+
+          <section v-if="exhibition.entryDetails" class="layout-item">
+            <h6>Entry Details:</h6>
+            <p>{{ exhibition.entryDetails }}</p>
+          </section>
           -->
-          <a :href="'//' + `www.googlemaps.com/maps/search/?api=1&query=${ exhibition.location }`" target="_blank" rel="noreferrer noopener">
-            <p>{{ exhibition.galleryName }}</p>
-          </a>
-        </section>
+        </div>
+
       </main>
+
 
       <aside v-if="exhibition.calendar != undefined" class="layout-block">
         <a :href="'//' + `${ exhibition.calendar }`" target="_blank" rel="noreferrer noopener">
           <article @click="saveCal" class="layout-block card">
-            <!--
-            <section class="layout-item">
-              <p>{{ exhibition.showTitle }}</p>
-              <p>{{ exhibition.date }}</p>
-            </section>
-            -->
             <h5>Save to Calendar</h5>
           </article>
         </a>
       </aside>
+
 
     </div>
 
@@ -72,8 +77,10 @@ export default {
 </script>
 
 <style>
+/*
 #header {
   background-image: url( "~/assets/exhibitions/Senior-Show/cover.jpg");
   min-height: 20vh;
 }
+*/
 </style>

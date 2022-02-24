@@ -1,8 +1,6 @@
 ---
-showTitle: Joel Lithgow - Thesis Show
-galleryName: CCA - Hubble Street Galleries
-
-description: "More information coming soon."
+showTitle: Endless Transmission
+galleryName: Hubble Street Galleries
 
 date: "April 6-8, 2022"
 location: "151 Hubbell Street - Gallery B - SF"

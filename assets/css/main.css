@@ -308,6 +308,7 @@ button {
 
 .item-right {
   justify-self: right;
+  text-align: right;
 }
 
 .item-center {

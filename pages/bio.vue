@@ -9,10 +9,15 @@
     <div class="layout-page grid-plate">
 
 
-      <aside class="layout-section">
+      <main class="layout-section">
         <section class="layout-block">
           <h1>Bio</h1>
-          <p>Site still under construction!</p>
+          <section class="layout-item">
+            <p>Joel Lithgow is a multidisciplinary tech-based artist with a BFA in Fine Art from California College of the Arts.</p>
+            <p>His work often goes through a series of exploratory transmutations between the digital and physical. The process involves interfacing with all aspects of technology, from laser cutters to rubber stamps and defunct machines to complex systems such as material distribution systems.</p>
+            <p>Charged with a religious-like theory of a technological hyperobject, his practice is informed by the spiritual / synthetic connectivity of today's world.</p>
+          </section>
+          <NuxtLink to="/statement">Read Statement</NuxtLink>
         </section>
 
         <hr></hr>
@@ -27,15 +32,15 @@
             <a href="https://www.instagram.com/joellithgow"target="_blank" rel="noreferrer noopener"><p>joellithgow</p></a>
           </section>
         </section>
-      </aside>
+      </main>
 
 
-      <main>
+      <aside>
         <img :srcset="require( `~/assets/pictures/studioshot.jpg` ).srcSet"
              alt="A photo of Joel Lithgow making art."
              title="Joel Lithgow"
              class="cover">
-      </main>
+      </aside>
 
 
     </div>

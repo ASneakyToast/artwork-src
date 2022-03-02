@@ -92,11 +92,13 @@
           <p v-if="artwork.series">{{ artwork.series }}</p>
           <p v-else>This is a standalone piece.</p>
         </section>
+        <!-- Not doing atm
         <section class="layout-item">
           <h5>Featured In</h5>
           <p v-if="artwork.collections">{{ artwork.collections }}</p>
           <p v-else>This work is independant from any collections.</p>
         </section>
+        -->
         <section class="layout-item">
           <h5>Showed In:</h5>
           <p v-if="artwork.exhibitions">{{ artwork.exhibitions }}</p>

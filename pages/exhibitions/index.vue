@@ -14,7 +14,7 @@
 
       <hr></hr>
 
-      <div class="layout-block grid-big">
+      <main class="layout-block">
 
         <article v-for="exhibition of exhibitions"
                  :key="exhibition.id">
@@ -57,7 +57,7 @@
           </NuxtLink>
         </article>
 
-      </div>
+      </main>
 
     </div>
 

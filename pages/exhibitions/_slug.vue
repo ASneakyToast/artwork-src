@@ -38,6 +38,22 @@
           -->
         </div>
 
+        <hr></hr>
+
+        <div v-if="artworks.length > 1" class="layout-block">
+          <h2>Artwork Included</h2>
+          <section v-for="artwork of artworks"
+                   :key="index">
+            <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }"
+                      class="layout-item">
+              <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
+                    :alt="artwork.alt"
+                    :title="artwork.alt">
+              <p class="item-center">{{ artwork.title }}</p>
+            </NuxtLink>
+          </section>
+        </div>
+
       </main>
 
 
@@ -61,7 +77,14 @@ export default {
     try {
       const exhibition = await $content( "exhibitions", params.slug ).fetch()
 
-      return { exhibition }
+      const artworks = await $content( "artwork" )
+        .where({ 'exhibitions': { $contains: exhibition.showTitle } })
+        .only([ "title", "slug", "collections", "date" ])
+        .sortBy( "title", "asc" )
+        //.sortBy( "date", "asc" )
+        .fetch()
+
+      return { exhibition, artworks }
     } catch ( err ) {
       error({
         statusCode: 404,

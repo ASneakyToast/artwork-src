@@ -295,11 +295,13 @@ button {
   transition-timing-function: ease-in-out;
   text-decoration: none;
   color: black;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
 }
 
 .card:hover {
   border: 1px solid #0000EE;
   cursor: pointer;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.5);
 }
 
 .card:visited {

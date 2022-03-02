@@ -21,7 +21,7 @@ series: Circuitures
 collections: 
 - 2020 Portfolio
 exhibitions:
-- Hamagucchi-2020
+- 2020 Yozo Hamaguchi Scholarship Exhibition
 
 featured: true
 published: true

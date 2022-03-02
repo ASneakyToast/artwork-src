@@ -18,6 +18,8 @@ tools:
 - silkscreen
 
 series: Circuitures
+exhibitions:
+- 2020 Yozo Hamaguchi Scholarship Exhibition
 
 featured: false
 published: false

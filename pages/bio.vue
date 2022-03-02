@@ -6,7 +6,7 @@
     </section>
 
 
-    <div class="layout-page grid-plate">
+    <div class="layout-page">
 
 
       <main class="layout-section">
@@ -48,3 +48,47 @@
 
   </div>
 </template>
+
+
+
+<style scoped>
+.layout-page {
+  display: flex;
+}
+
+
+@media only screen and ( max-width: 640px ) {
+  .layout-page {
+    flex-direction: column;
+    grid-gap: 32px;
+  }
+
+  .layout-page > main {
+    max-width: 460px;
+  }
+
+  .layout-page > aside {
+    display: block;
+  }
+}
+
+@media only screen and ( max-width: 800px ) and ( min-width: 640px ) {
+  .layout-page > main {
+    max-width: 460px;
+  }
+
+  .layout-page > aside {
+    display: block;
+  }
+}
+
+@media only screen and ( min-width: 800px ) {
+  .layout-page > main {
+    max-width: 460px;
+  }
+
+  .layout-page > aside {
+    display: block;
+  }
+}
+</style>

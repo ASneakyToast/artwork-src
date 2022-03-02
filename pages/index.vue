@@ -47,10 +47,9 @@
 
       <aside class="layout-section">
         <section class="layout-block">
-          <img :srcset="require( `~/assets/pictures/studioshot.jpg` ).srcSet"
-               alt="A photo of Joel Lithgow making art."
-               title="Joel Lithgow"
-               class="cover">
+          <video width="100%" autoplay muted loop>
+            <source :src="require( `~/assets/pictures/AGardenCampus.mp4` )" type="video/mp4">
+          </video>
         </section>
       </aside>
 

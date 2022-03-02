@@ -48,3 +48,11 @@ export default {
   }
 }
 </script>
+
+
+
+<style scoped>
+>>> .nuxt-content {
+  text-align: justify;
+}
+</style>

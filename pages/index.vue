@@ -6,10 +6,10 @@
     </section>
 
 
-    <div class="layout-page grid-plate">
+    <div class="layout-page">
 
 
-      <aside class="layout-section">
+      <main class="layout-section">
         
         <section class="layout-block">
           <h1>Joel Lithgow</h1>
@@ -42,17 +42,17 @@
 
         </section>
 
-      </aside>
+      </main>
 
 
-      <main class="layout-section">
+      <aside class="layout-section">
         <section class="layout-block">
           <img :srcset="require( `~/assets/pictures/studioshot.jpg` ).srcSet"
                alt="A photo of Joel Lithgow making art."
                title="Joel Lithgow"
                class="cover">
         </section>
-      </main>
+      </aside>
 
 
     </div>
@@ -61,9 +61,54 @@
   </div>
 </template>
 
+
+
 <script>
 export default {
   // Make photo load random artwork or content every time.
   // Or make a specific photo ( which I think I like more )
 }
 </script>
+
+
+<style scoped>
+.layout-page {
+  display: flex;
+}
+
+
+@media only screen and ( max-width: 640px ) {
+  .layout-page {
+    flex-direction: column;
+    grid-gap: 32px;
+  }
+
+  .layout-page > main {
+    max-width: 460px;
+  }
+
+  .layout-page > aside {
+    display: block;
+  }
+}
+
+@media only screen and ( max-width: 800px ) and ( min-width: 640px ) {
+  .layout-page > main {
+    max-width: 460px;
+  }
+
+  .layout-page > aside {
+    display: block;
+  }
+}
+
+@media only screen and ( min-width: 800px ) {
+  .layout-page > main {
+    max-width: 460px;
+  }
+
+  .layout-page > aside {
+    display: block;
+  }
+}
+</style>

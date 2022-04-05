@@ -1,5 +1,5 @@
 ---
-showTitle: Endless Transmission
+showTitle: "Snowcrashed : Joel Lithgow"
 galleryName: Hubble Street Galleries
 
 date: "April 6-8, 2022"
@@ -10,4 +10,10 @@ calendar: calendar.google.com/event?action=TEMPLATE&tmeid=MDBzdjlhdjV1dW1qdWZ1Yz
 featured: true
 published: true
 ---
-More information coming soon.
+##### Snowcrash
+\ snō * krash \ \
+snowcrashed; snowcrashing
+
+: a type of chronic mental state relating to computer usage; an effect of overstimulation.
+
+also see: permafried, burnt

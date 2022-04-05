@@ -20,8 +20,8 @@
           </li>
         </ul>
 
-        <!--
         <!-- I like this for categories but not for my current work. I think this page should really be focused on detail images n shit. -->
+        <!--
         <section class="layout-block grid-small">
           <article v-for="artwork of artworks"
               :key="artwork.id">
@@ -44,12 +44,14 @@
         -->
       </aside>
 
+      <!--
       <main>
         <img :srcset="require( `~/assets/pictures/studioshot.jpg` ).srcSet"
              alt="A photo of Joel Lithgow making art."
              title="Joel Lithgow"
              class="cover">
       </main>
+      -->
 
     </div>
   </div>

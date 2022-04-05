@@ -20,7 +20,7 @@ tools:
 collections:
 - 2020 Portfolio
 exhibitions:
-- Press Forward 2021 Student Exhibit
+- Press-Forward
 
 featured: true
 published: true

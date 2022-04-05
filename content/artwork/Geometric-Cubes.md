@@ -18,7 +18,7 @@ tools:
 collections:
 - 2019 Portfolio
 exhibitions:
-- 2020 Yozo Hamaguchi Scholarship Exhibition
+- 2020-Yozo-Hamaguchi-Scholarship-Exhibition
 
 featured: false
 published: true

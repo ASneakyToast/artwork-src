@@ -40,8 +40,8 @@
 
         <hr></hr>
 
-        <div v-if="artworks.length > 1" class="layout-block">
-          <h2>Artwork Included</h2>
+        <div v-if="artworks.length > 0" class="layout-block">
+          <h2>Artwork(s) Included</h2>
           <section v-for="artwork of artworks"
                    :key="index">
             <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }"
@@ -78,7 +78,8 @@ export default {
       const exhibition = await $content( "exhibitions", params.slug ).fetch()
 
       const artworks = await $content( "artwork" )
-        .where({ 'exhibitions': { $contains: exhibition.showTitle } })
+        //.where({ 'exhibitions': { $contains: exhibition.showTitle } })
+        .where({ 'exhibitions': { $contains: params.slug } })
         .only([ "title", "slug", "collections", "date" ])
         .sortBy( "title", "asc" )
         //.sortBy( "date", "asc" )

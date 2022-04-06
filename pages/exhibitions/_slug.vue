@@ -38,12 +38,25 @@
           -->
         </div>
 
-        <hr></hr>
+      </main>
 
-        <div v-if="artworks.length > 0" class="layout-block">
+
+      <aside class="layout-section">
+        <section v-if="exhibition.calendar != undefined" class="layout-block">
+          <a :href="'//' + `${ exhibition.calendar }`" target="_blank" rel="noreferrer noopener">
+            <article @click="saveCal" class="layout-block card">
+              <h5>Save to Calendar</h5>
+            </article>
+          </a>
+        </section>
+
+        <hr v-if="artworks.length > 0 && exhibition.calendar != undefined"></hr>
+
+        <section v-if="artworks.length > 0" class="layout-block">
           <h2>Artwork(s) Included</h2>
           <section v-for="artwork of artworks"
-                   :key="index">
+                   :key="index"
+                   id="artworks">
             <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }"
                       class="layout-item">
               <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
@@ -52,17 +65,7 @@
               <p class="item-center">{{ artwork.title }}</p>
             </NuxtLink>
           </section>
-        </div>
-
-      </main>
-
-
-      <aside v-if="exhibition.calendar != undefined" class="layout-block">
-        <a :href="'//' + `${ exhibition.calendar }`" target="_blank" rel="noreferrer noopener">
-          <article @click="saveCal" class="layout-block card">
-            <h5>Save to Calendar</h5>
-          </article>
-        </a>
+        </section>
       </aside>
 
 
@@ -100,7 +103,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+#artworks img {
+  max-height: 150px;
+  width: fit-content;
+  object-fit: none;
+}
 /*
 #header {
   background-image: url( "~/assets/exhibitions/Senior-Show/cover.jpg");

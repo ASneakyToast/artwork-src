@@ -21,7 +21,7 @@
         <section class="layout-block">
 
           <section class="layout-item">
-            <h3><NuxtLink to="/exhibitions">Exhibitions + Showings</NuxtLink></h3>
+            <h3><NuxtLink to="/exhibitions">Exhibitions + Shows</NuxtLink></h3>
             <!-- <p>Upcoming events.</p> -->
           </section>
 

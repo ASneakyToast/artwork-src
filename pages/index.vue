@@ -13,7 +13,7 @@
         
         <section class="layout-block">
           <h1>Joel Lithgow</h1>
-          <p>is a multidisciplinary cyborg-based artist who's work often goes through a series of transmutations between the digital and physical.</p>
+          <p>is a multidisciplinary tech-based artist who's work often goes through a series of transmutations between the digital and physical.</p>
         </section>
 
         <hr></hr>

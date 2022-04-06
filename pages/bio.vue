@@ -36,10 +36,11 @@
 
 
       <aside>
-        <img :srcset="require( `~/assets/pictures/studioshot.jpg` ).srcSet"
+        <img :srcset="require( `~/assets/pictures/studioshot-${ imageNumber }.jpg` ).srcSet"
              alt="A photo of Joel Lithgow making art."
              title="Joel Lithgow"
-             class="cover">
+             class="cover"
+             @click="changePhoto()">
       </aside>
 
 
@@ -48,6 +49,27 @@
 
   </div>
 </template>
+
+
+
+<script>
+export default {
+  data: () => {
+    return {
+      imageNumber: Math.floor(Math.random()*3)+1,
+    }
+  },
+  methods: {
+    changePhoto: function() {
+      if ( this.imageNumber >= 3 ) {
+        this.imageNumber = 1;
+      } else {
+        this.imageNumber++;
+      }
+    }
+  }
+}
+</script>
 
 
 

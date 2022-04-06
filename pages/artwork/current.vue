@@ -28,40 +28,41 @@
 
       <section id="artworks" class="layout-block">
 
-        <article v-for="artwork of artworks"
-            :key="artwork.id"
-            :id="artwork.slug">
-          <aside class="item-center">
-            <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
-              <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
-                   data-src="..."
-                   :alt="artwork.alt"
-                   :title="artwork.alt" />
-            </NuxtLink>
-          </aside>
-          <main class="layout-block well">
-            <header>
-              <h4>
-                <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
-                  {{ artwork.title }}
-                </NuxtLink>
-              </h4>
-            </header>
-            <main class="layout-item">
-              <p>{{ artwork.date | formatDate }}</p>
-              <p>{{ artwork.size }}</p>
-              <p>{{ artwork.medium }}</p>
-              <p>{{ artwork.materials }}</p>
+        <section v-for="artwork of artworks" class="layout-block">
+          <article 
+              :key="artwork.id"
+              :id="artwork.slug">
+            <aside class="item-center">
+              <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
+                <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
+                     data-src="..."
+                     :alt="artwork.alt"
+                     :title="artwork.alt" />
+              </NuxtLink>
+            </aside>
+            <main class="layout-block well">
+              <header>
+                <h4>
+                  <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
+                    {{ artwork.title }}
+                  </NuxtLink>
+                </h4>
+              </header>
+              <main class="layout-item">
+                <p>{{ artwork.date | formatDate }}</p>
+                <p>{{ artwork.size }}</p>
+                <p>{{ artwork.medium }}</p>
+                <p>{{ artwork.materials }}</p>
+              </main>
+              </header>
+              <footer>
+                <p>{{ artwork.flavor }}</p>
+              </footer>
             </main>
-            </header>
-            <footer>
-              <p>{{ artwork.flavor }}</p>
-            </footer>
-          </main>
+          </article>
 
-          <br></br>
-
-        </article>
+        <hr class="secondary"></hr>
+      </section>
 
       </section>
     </div>
@@ -106,8 +107,9 @@ export default{
 
 @media only screen and ( max-width: 860px ) {
 
-  #artworks > article {
-    display: grid;
+  #artworks article {
+    display: flex;
+    flex-direction: column;
     grid-gap: 16px;
   }
 
@@ -115,7 +117,7 @@ export default{
 
 @media only screen and ( min-width: 860px ) {
   
-  #artworks > article {
+  #artworks article {
     display: grid;
     grid-template-columns: 3fr 1fr;
   }

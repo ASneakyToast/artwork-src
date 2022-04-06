@@ -31,12 +31,17 @@ h5, h6 {
 /* ELEMENTS */
 
 body {
-  background-color: white;
+  background-color: whitesmoke;
 }
 
 hr {
   width: 100%;
-  border: 1px solid darkSlateGray
+  height: 0;
+  border: 1px solid darkSlateGray;
+}
+
+hr.secondary {
+  border: 1px solid lightgray;
 }
 
 ul {
@@ -63,48 +68,55 @@ button {
 
 @media only screen and ( max-width: 640px ) {
   .layout-site {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-gap: 16px;
     margin: 16px;
   }
 
   .layout-page {
     padding: 24px;
-    display: grid;
-    grid-gap: 16px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 24px;
   }
 
   .layout-section {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-gap: 24px;
   }
 
   .layout-block {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-gap: 16px;
     height: fit-content;
   }
   .nuxt-content {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-gap: 16px;
   }
 
   .layout-item {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-gap: 8px;
   }
 
   .layout-detail {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-gap: 4px;
   }
 
   .grid-plate {
-    grid-template-rows: 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
   }
 
   .grid-plate > main {
-    grid-row: 1 / span 2;
+    /* grid-row: 1 / span 2; */
   }
 
   .grid-small {
@@ -315,6 +327,7 @@ button {
 
 .item-center {
   justify-self: center;
+  margin: auto;
 }
 
 .well {

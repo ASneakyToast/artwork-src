@@ -48,7 +48,8 @@
       <aside class="layout-section">
         <section class="layout-block">
           <video width="100%" autoplay muted loop>
-            <source :src="require( `~/assets/pictures/AGardenCampus.mp4` )" type="video/mp4">
+            <!-- <source :src="require( `~/assets/pictures/AGardenCampus.mp4` )" type="video/mp4"> -->
+            <source src="https://storage.googleapis.com/joellithgow-media/AGardenCampus.mp4" type="video/mp4">
           </video>
         </section>
       </aside>

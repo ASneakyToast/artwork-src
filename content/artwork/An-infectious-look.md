@@ -19,7 +19,7 @@ collections:
 - Screen Paintings
 - 2021 Portfolio
 
-featured: true
+featured: false
 published: true
 ---
 

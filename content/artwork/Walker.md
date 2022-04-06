@@ -23,7 +23,7 @@ collections:
 exhibitions:
 - 2020-Yozo-Hamaguchi-Scholarship-Exhibition
 
-featured: true
+featured: false
 published: true
 ---
 

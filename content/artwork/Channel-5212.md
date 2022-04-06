@@ -21,7 +21,7 @@ tools:
 exhibitions:
 - Snowcrashed
 
-featured: false
+featured: true
 published: true
 ---
 One of my favorite things to do is watch tv and draw.

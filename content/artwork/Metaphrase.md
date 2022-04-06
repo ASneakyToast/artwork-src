@@ -21,7 +21,7 @@ tools:
 collections:
 - 2021 Portfolio
 
-featured: true
+featured: false
 published: true
 ---
 

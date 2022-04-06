@@ -22,7 +22,7 @@ collections:
 exhibitions:
 - Press-Forward
 
-featured: true
+featured: false
 published: true
 ---
 

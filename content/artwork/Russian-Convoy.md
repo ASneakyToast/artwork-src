@@ -17,7 +17,7 @@ tools:
 exhibitions:
 - Snowcrashed
 
-featured: false
+featured: true
 published: true
 ---
 I've been following the invasion of Ukraine by Russia pretty frequently and mainly through news articles on my phone.

@@ -38,6 +38,17 @@
           -->
         </div>
 
+        <div v-if="exhibition.photoAmount >= 1" class="layout-block">
+          <hr>
+
+          <article v-for="photo of exhibition.photoAmount"
+                   :key="photo.id">
+            <img :srcset="require( `~/assets/exhibitions/${ exhibition.slug }/photo-${ photo }.jpg` ).srcSet">
+          </article>
+
+          <hr>
+        </div>
+
       </main>
 
 
@@ -55,7 +66,7 @@
         <section v-if="artworks.length > 0" class="layout-block">
           <h2>Artwork(s) Included</h2>
           <section v-for="artwork of artworks"
-                   :key="index"
+                   :key="artwork.id"
                    id="artworks">
             <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }"
                       class="layout-item">
@@ -87,6 +98,7 @@ export default {
         .sortBy( "title", "asc" )
         //.sortBy( "date", "asc" )
         .fetch()
+
 
       return { exhibition, artworks }
     } catch ( err ) {

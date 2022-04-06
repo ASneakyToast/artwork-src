@@ -24,3 +24,5 @@ exhibitions:
 featured: false
 published: true
 ---
+One of my favorite things to do is watch tv and draw.
+I sat outside CCA's Oakland campus and watched the 5212 Channel while drawing this.

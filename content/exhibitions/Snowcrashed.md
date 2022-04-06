@@ -7,6 +7,8 @@ location: "151 Hubbell Street - Gallery B - SF"
 
 calendar: calendar.google.com/event?action=TEMPLATE&tmeid=MDBzdjlhdjV1dW1qdWZ1YzUwbDU3azNwcnIgamxpdGhnb3dAY2NhLmVkdQ&tmsrc=jlithgow%40cca.edu
 
+photoAmount: 4
+
 featured: true
 published: true
 ---

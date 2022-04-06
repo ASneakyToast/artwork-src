@@ -1,20 +1,22 @@
 ---
-title: 2b2t
+title: Channel 5212
 
 description: A "map" of a long running anarhcy minecraft server using images of the world.
 alt: An 8ft by 8ft x 3/4" panel with 9:2 strips of aerial view map and 3:4 labels of structures that occur within the minecraft server 2b2t.
-flavor: Joel is neat!
+flavor: A freeze frame of the Oakland 5212 Channel on TV.
 
-date: 2022-04-04
-size: 8' x 8'
+date: 2022-04-25
+size: 4' x 2'
 
 medium: Printmedia
 materials:
-- receipt paper
-- label stickers
+- ink
+- gesso
 - plywood
+- tv film
+- pins
 tools:
-- thermal printer
+- rubber stamps
 
 exhibitions:
 - Snowcrashed

@@ -1,7 +1,7 @@
 ---
 title: Shades of a Garden Campus
 
-description: Experience the place that was the Oakland campus.
+description: A gazebo installation paying homage to the rich history of the Oakland campus and its spirit, with myriad images sourced from the CCA/C Archive.
 alt: A circular structure 10ft in diamiater and height, allowing a person to stand on the inside and view a 360 collage of archived photos from the Oakland campus.
 flavor: Where we grow artists.
 
@@ -23,3 +23,4 @@ exhibitions:
 featured: true
 published: true
 ---
+A gazebo installation paying homage to the rich history of the Oakland campus and its spirit, with myriad images sourced from the CCA/C Archive.

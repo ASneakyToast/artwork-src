@@ -9,6 +9,11 @@ more: https://portal.cca.edu/essentials/exhibitions/creative-citizens-action/flu
 
 calendar: https://calendar.google.com/event?action=TEMPLATE&tmeid=MzZyZmNnaWpna2N1ZGg2ZHJsNjNzdXUyaTYgY19iZnFlbGZ1bnU4MjA1cTIyY2hrNjAwNDhxa0Bn&tmsrc=c_bfqelfunu8205q22chk60048qk%40group.calendar.google.com
 
+photoAmount: 4
+
+artwork:
+- Shades-of-a-Garden-Campus
+
 featured: true
 published: true
 ---

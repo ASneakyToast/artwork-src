@@ -64,7 +64,7 @@
         </section>
         <section class="layout-item">
           <h5>Completed On</h5>
-          <p v-if="artwork.date">{{ artwork.date }}</p>
+          <p v-if="artwork.date">{{ artwork.date | formatDate }}</p>
           <p v-else>Date unknown</p>
         </section>
         <section class="layout-item">
@@ -169,6 +169,10 @@ export default {
       }
       value = value.toString();
       return value.charAt( 0 ).toUpperCase() + value.slice(1);
+    },
+    formatDate: function ( date ) {
+      const options = { year: "numeric", month: "numeric", day: "numeric" };
+      return new Date( date ).toLocaleDateString( "en", options );
     }
   },
 }

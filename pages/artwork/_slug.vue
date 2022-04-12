@@ -40,10 +40,10 @@
       <hr></hr>
 
 
-      <NuxtContent :document="artwork" class="layout-block"/>
+      <NuxtContent v-if="artwork.body.children.length > 0" :document="artwork" class="layout-block"/>
 
 
-      <hr></hr>
+      <hr v-if="artwork.body.children.length > 0"></hr>
 
 
       <article id="data" class="layout-block">

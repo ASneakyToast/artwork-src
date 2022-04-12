@@ -1,7 +1,7 @@
 ---
 title: Washington Seattle Landscape
 
-description: A temporary reflection of misinnterperting Washington for Seattle.
+description: A temporary reflection of misinterperting Washington for Seattle.
 alt: A roughly 27" monitor film placed over a reconfiguration of one of Joseph Blakes receipt pieces to resemble a mountain.
 flavor: My friend's from Seattle.
 

@@ -12,10 +12,18 @@ photoAmount: 4
 featured: true
 published: true
 ---
-##### Snowcrash
-\ snō * krash \ \
-snowcrashed; snowcrashing
+"Snowcrashed" is a term I have self-diagnosed myself with.
+A play on the overwhelming idea of how much technology has influenced my life today. 
+An idea that is sometimes to hard to grasp and put's itself just out of my reach of comprehension.
+Such as an overly detailed map.
+There are moments when this idea turns into a feeling, physically hurting.
+Like eye strain from looking at a screen for too long.
+And times when there is this weird mental dissonance.
+Like finding oblivion in news articles on your phone.
 
-: a type of chronic mental state relating to computer usage; an effect of overstimulation.
-
-also see: permafried, burnt
+This work is a reproduction of this feeling.
+Representing moments in my life where I was snowcrashing.
+Created with materials that instill it's prescribed effect into the viewer.
+Films from old TV's that cause your eye to rapidly cascade.
+The abstraction and warmth textiles creates on a foreboding image.
+The physical layering of large bitmaps causing incomprehension.

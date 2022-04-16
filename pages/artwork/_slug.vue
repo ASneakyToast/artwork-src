@@ -148,7 +148,7 @@ export default {
       if ( from.name == "artwork-slug" ) {
         from = undefined;
       } else if ( from.name == "artwork-collections-slug" ) {
-        from.name = from.params.slug;
+        from.name = "collections-" + from.params.slug;
       } else if ( from.name == "exhibitions-slug" ) {
         from.name = "exhibitions-" + from.params.slug;
         //from.name = from.params.slug;

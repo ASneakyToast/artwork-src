@@ -1,8 +1,10 @@
 ---
-title: Screen Printing
+title: Screen Paintings
 
 description: Um I guess this is needed?
-published: false
+
+featured: false
+published: true
 ---
 
 Confronting Failure

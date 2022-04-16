@@ -14,6 +14,8 @@ materials:
 tools:
 - digital jacquard
 
+collections:
+- Weavings
 exhibitions:
 - Snowcrashed
 

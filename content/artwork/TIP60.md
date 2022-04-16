@@ -18,7 +18,7 @@ tools:
 - thermal printer
 
 collections:
-- Screen Paintings
+- Screen-Paintings
 
 featured: false
 published: true

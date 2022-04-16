@@ -13,33 +13,21 @@
         
         <section class="layout-block">
           <h1>Joel Lithgow</h1>
-          <p>is a multidisciplinary tech-based artist who's work often goes through a series of transmutations between the digital and physical.</p>
+          <h2>is a multidisciplinary tech-based artist who's work often goes through a series of transmutations between the digital and physical.</h2>
         </section>
 
         <hr></hr>
 
         <section class="layout-block">
-
           <section class="layout-item">
-            <h3><NuxtLink to="/exhibitions">Exhibitions + Shows</NuxtLink></h3>
-            <!-- <p>Upcoming events.</p> -->
+            <h3><NuxtLink to="/exhibitions">Exhibitions</NuxtLink></h3>
           </section>
-
           <section class="layout-item">
-            <h3><NuxtLink to="/artwork/current">Current Artwork</NuxtLink></h3>
-            <!-- <p>Fine art and conceptual work.</p> -->
+            <h3><NuxtLink to="/artwork">Artwork</NuxtLink></h3>
           </section>
-
-          <section class="layout-item">
-            <h3><NuxtLink to="/artwork/archive">Archive</NuxtLink></h3>
-            <!-- <p>Fine art and conceptual work.</p> -->
-          </section>
-
           <section class="layout-item">
             <h3><NuxtLink to="/bio">Bio</NuxtLink></h3>
-            <!-- <p>More about my life and how to contact me.</p> -->
           </section>
-
         </section>
 
       </main>

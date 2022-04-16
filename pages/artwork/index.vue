@@ -16,42 +16,25 @@
             <h4><NuxtLink to="/artwork/current">Current Work</NuxtLink></h4>
           </li>
           <li>
+            <h4><NuxtLink to="/artwork/collections">Collections</NuxtLink></h4>
+          </li>
+          <li>
             <h4><NuxtLink to="/artwork/archive">Archive</NuxtLink></h4>
           </li>
         </ul>
-
-        <!-- I like this for categories but not for my current work. I think this page should really be focused on detail images n shit. -->
-        <!--
-        <section class="layout-block grid-small">
-          <article v-for="artwork of artworks"
-              :key="artwork.id">
-            <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }" class="layout-item">
-              <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
-                    :alt="artwork.alt"
-                    :title="artwork.alt"
-                    class="square">
-              <h4>{{ artwork.title }}</h4>
-            </NuxtLink>
-          </article>
-        </section>
-        -->
-
-        <!-- No archive on mvp
-        <section class="layout-item">
-          <h3><NuxtLink to="/archive">Archive</NuxtLink></h3>
-          <p>- Everything from my favorite collections to shitty one-offs.</p>
-        </section>
-        -->
       </aside>
 
-      <!--
-      <main>
-        <img :srcset="require( `~/assets/pictures/studioshot.jpg` ).srcSet"
-             alt="A photo of Joel Lithgow making art."
-             title="Joel Lithgow"
-             class="cover">
+      <main class="layout-block">
+        <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
+          <article class="layout-item">
+            <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
+                 alt="A photo of Joel Lithgow making art."
+                 title="Joel Lithgow"
+                 class="cover">
+            <h5 class="item-center">{{ artwork.title }}</h5>
+          </article>
+        </NuxtLink>
       </main>
-      -->
 
     </div>
   </div>
@@ -59,7 +42,24 @@
 
 <script>
 export default {
-  // Make photo load random artwork or content every time.
-  // Or make a specific photo ( which I think I like more )
+  async asyncData({ $content, params, error }) {
+    try {
+
+      const artworks = await $content( "artwork" )
+        .where({ featured: true })
+        .only([ "title", "featured", "slug" ])
+        .fetch()
+
+      const artwork = artworks[ Math.floor( Math.random() * artworks.length ) ];
+
+      return { artwork }
+
+    } catch ( err ) {
+      error({
+        statusCode: 404,
+        message: "Page could not be found",
+      })
+    }
+  }
 }
 </script>

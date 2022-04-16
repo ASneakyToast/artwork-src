@@ -2,7 +2,7 @@
   <div class="layout-site">
 
     <section class="layout-block">
-      <h5><NuxtLink to="/artwork">/ Artwork</NuxtLink></h5>
+      <h5><NuxtLink to="/artwork/collections">/ Artwork-Collections</NuxtLink></h5>
     </section>
 
 

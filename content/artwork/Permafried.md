@@ -19,7 +19,7 @@ tools:
 - plotter
 
 collections:
-- Screen Paintings
+- Screen-Paintings
 - 2021 Portfolio
 
 featured: false

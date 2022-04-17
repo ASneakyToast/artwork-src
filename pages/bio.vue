@@ -17,7 +17,13 @@
             <p>His work often goes through a series of exploratory transmutations between the digital and physical. The process involves interfacing with all aspects of technology, from laser cutters to rubber stamps and defunct machines to complex systems such as material distribution systems.</p>
             <p>Charged with a religious-like theory of a technological hyperobject, his practice is informed by the spiritual / synthetic connectivity of today's world.</p>
           </section>
-          <NuxtLink to="/statement">Read Statement</NuxtLink>
+        </section>
+
+        <hr></hr>
+
+        <section class="layout-block">
+          <NuxtLink to="/influences">Influences</NuxtLink>
+          <NuxtLink to="/statement">Artist's Statement</NuxtLink>
         </section>
 
         <hr></hr>

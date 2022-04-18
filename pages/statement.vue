@@ -35,7 +35,7 @@ export default {
         .limit( 1 )
         .fetch();
       */
-      const statement = await $content( "artist-statements", "feb-15-2021" ).fetch();
+      const statement = await $content( "artist-statements", "apr-17-2022" ).fetch();
 
       return { statement }
 
@@ -54,5 +54,10 @@ export default {
 <style scoped>
 >>> .nuxt-content {
   text-align: justify;
+}
+
+.layout-page {
+  max-width: 640px;
+  margin: 0 auto;
 }
 </style>

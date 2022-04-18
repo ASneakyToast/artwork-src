@@ -93,13 +93,30 @@
 <script>
 export default {
   async asyncData({ $content, params, error }) {
-    const dateToday = new Date().getTime();
     try {
+      const dateToday = new Date().getTime();
+      /*
+      const dateToday = new Date().toISOString();
+      console.log( dateToday );
+
+      const dateToday = new Date().toISOString();
+      console.log( dateToday );
+
+      const test = await $content( "exhibitions" )
+        .where({ published: true })
+        .fetch()
+
+      console.log( test[ 4 ] );
+      console.log( test[ 4 ].dateStart );
+      console.log( typeof test[ 4 ].dateStart );
+      console.log( typeof dateToday );
+      //console.log( test[ 4 ].dateStart < dateToday );
+      //console.log( test[ 4 ].dateEnd > dateToday );
+      */
 
       const ongoing = await $content( "exhibitions" )
         .where({ published: true })
-        .where({ dateStart: { $lt: dateToday }, dateEnd: { $gt: dateToday }})
-        //.where({ dateEnd: { $gt: dateToday } })
+        .where({ dateStart: { $lt: dateToday }, dateEnd: { $gt: dateToday }}) //.where({ dateEnd: { $gt: dateToday } })
         .only([ "showTitle", "description", "featured", "slug", "galleryName", "dateStart", "dateEnd", "location" ])
         .sortBy( "dateStart", "desc" )
         .fetch()

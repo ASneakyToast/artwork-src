@@ -17,7 +17,11 @@
               <h3>@ {{ exhibition.galleryName }}</h3>
             </a>
           </section>
-          <h3 class="item-right">{{ exhibition.date }}</h3>
+          <!--<h3 class="item-right">{{ exhibition.dateStart | formatDate }} <br>- {{ exhibition.dateEnd | formatDate }}</h3>-->
+          <section class="item-right">
+            <h3 >{{ exhibition.dateStart | formatDate }}</h3>
+            <h3 >{{ exhibition.dateEnd | formatDate }}</h3>
+          </section>
         </section>
 
         <hr></hr>
@@ -111,7 +115,19 @@ export default {
   methods: {
     saveCal: function() {
     }
-  }
+  },
+  filters: {
+    formatDate: function ( date ) {
+      const options = { year: "numeric", month: "numeric", day: "numeric" };
+      let formatted = new Date( date ).toLocaleDateString( "en", options );
+
+      if ( formatted != "Invalid Date" ) {
+        return formatted;
+      } else {
+        return date;
+      }
+    }
+  },
 }
 </script>
 

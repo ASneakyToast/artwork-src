@@ -2,7 +2,8 @@
 showTitle: Press Forward - PrintMatters National Student Printmaking Show
 galleryName: PrintMatters
 
-date: "October 23 – December 11, 2021"
+dateStart: 2021-10-23
+dateEnd: 2021-12-11
 location: "6700 Harrisburg Blvd, Houston, TX 77011"
 
 artwork:

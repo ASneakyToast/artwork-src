@@ -2,7 +2,8 @@
 showTitle: CCA@CCA Fluid Mutualism Symposium Exhibition
 galleryName: CCA - Nave
 
-date: "February 28 - March 4, 2022"
+dateStart: 2022-02-28
+dateEnd: 2022-03-04
 location: "1111 Eighth Street, San Francisco, CA 94107"
 
 more: https://portal.cca.edu/essentials/exhibitions/creative-citizens-action/fluid-mutualism/

@@ -9,53 +9,76 @@
     <div class="layout-page">
 
       <section class="layout-block">
-        <h1>Exhibitions + Showings</h1>
+        <h1>Exhibitions</h1>
       </section>
 
       <hr></hr>
 
-      <main class="layout-block">
+      <main class="layout-section">
 
-        <article v-for="exhibition of exhibitions"
-                 :key="exhibition.id">
-          <NuxtLink :to="{ name: 'exhibitions-slug', params: { slug: exhibition.slug } }"
-                    class="layout-block card exhibition"
-                    :class="{ 'big-grid--featured': exhibition.featured }">
-
-          <!--
-            <img :srcset="require( `~/assets/exhibitions/${ exhibition.slug }/cover.jpg` ).srcSet"
-                  :alt="exhibition.alt"
-                  :title="exhibition.alt">
-          -->
-            <section class="layout-item row">
-              <main class="layout-item">
-                <h3>{{ exhibition.showTitle }}</h3>
-                <h5>@ {{ exhibition.galleryName }}</h5>
-              </main>
-              <aside class="item-right">
-                <p>{{ exhibition.date }}</p>
-              </aside>
-            </section>
-
-            <!--
-            <section class="layout-item">
-              <section class="layout-item">
-                <h5>Gallery</h5>
-                <p>CCA Hubble Street Galleries</p>
+        <section v-if="ongoing.length > 0" class="layout-block">
+          <h2>Ongoing</h2>
+          <article v-for="exhibition of ongoing"
+                   :key="exhibition.id">
+            <NuxtLink :to="{ name: 'exhibitions-slug', params: { slug: exhibition.slug } }"
+                      class="layout-block card exhibition"
+                      :class="{ 'big-grid--featured': exhibition.featured }">
+              <section class="layout-item row">
+                <main class="layout-item">
+                  <h3>{{ exhibition.showTitle }}</h3>
+                  <h5>@ {{ exhibition.galleryName }}</h5>
+                </main>
+                <aside class="item-right">
+                  <p>{{ exhibition.dateStart | formatDate }} - {{ exhibition.dateEnd | formatDate }}</p>
+                </aside>
               </section>
-              <section class="layout-item">
-                <h5>Location</h5>
-                <p>{{ exhibitio.location }}</p>
-              </section>
-              <section class="layout-item">
-                <h5>Date + Time</h5>
-                <p>{{ exhibitio.date }}</p>
-              </section>
-            </section>
-            -->
+            </NuxtLink>
+          </article>
+        </section>
 
-          </NuxtLink>
-        </article>
+        <hr v-if="ongoing.length > 0 && upcomming.length > 0" class="secondary"></hr>
+
+        <section v-if="upcomming.length > 0" class="layout-block">
+          <h2>Upcomming</h2>
+          <article v-for="exhibition of upcomming"
+                   :key="exhibition.id">
+            <NuxtLink :to="{ name: 'exhibitions-slug', params: { slug: exhibition.slug } }"
+                      class="layout-block card exhibition"
+                      :class="{ 'big-grid--featured': exhibition.featured }">
+              <section class="layout-item row">
+                <main class="layout-item">
+                  <h3>{{ exhibition.showTitle }}</h3>
+                  <h5>@ {{ exhibition.galleryName }}</h5>
+                </main>
+                <aside class="item-right">
+                  <p>{{ exhibition.dateStart | formatDate }} - {{ exhibition.dateEnd | formatDate }}</p>
+                </aside>
+              </section>
+            </NuxtLink>
+          </article>
+        </section>
+
+        <hr class="secondary"></hr>
+
+        <section v-if="past" class="layout-block">
+          <h2>past</h2>
+          <article v-for="exhibition of past"
+                   :key="exhibition.id">
+            <NuxtLink :to="{ name: 'exhibitions-slug', params: { slug: exhibition.slug } }"
+                      class="layout-block card exhibition"
+                      :class="{ 'big-grid--featured': exhibition.featured }">
+              <section class="layout-item row">
+                <main class="layout-item">
+                  <h3>{{ exhibition.showTitle }}</h3>
+                  <h5>@ {{ exhibition.galleryName }}</h5>
+                </main>
+                <aside class="item-right">
+                  <p>{{ exhibition.dateStart | formatDate }} - {{ exhibition.dateEnd | formatDate }}</p>
+                </aside>
+              </section>
+            </NuxtLink>
+          </article>
+        </section>
 
       </main>
 
@@ -70,15 +93,33 @@
 <script>
 export default {
   async asyncData({ $content, params, error }) {
+    const dateToday = new Date().getTime();
     try {
 
-      const exhibitions = await $content( "exhibitions" )
+      const ongoing = await $content( "exhibitions" )
         .where({ published: true })
-        .only([ "showTitle", "description", "featured", "slug", "galleryName", "date", "location" ])
-        .sortBy( "date", "asc" )
+        .where({ dateStart: { $lt: dateToday }, dateEnd: { $gt: dateToday }})
+        //.where({ dateEnd: { $gt: dateToday } })
+        .only([ "showTitle", "description", "featured", "slug", "galleryName", "dateStart", "dateEnd", "location" ])
+        .sortBy( "dateStart", "desc" )
         .fetch()
 
-      return { exhibitions }
+      const past = await $content( "exhibitions" )
+        .where({ published: true })
+        .where({ dateStart: { $lt: dateToday } })
+        .where({ dateEnd: { $lt: dateToday } })
+        .only([ "showTitle", "description", "featured", "slug", "galleryName", "dateStart", "dateEnd", "location" ])
+        .sortBy( "dateStart", "desc" )
+        .fetch()
+
+      const upcomming = await $content( "exhibitions" )
+        .where({ published: true })
+        .where({ dateStart: { $gte: dateToday } })
+        .only([ "showTitle", "description", "featured", "slug", "galleryName", "dateStart", "dateEnd", "location" ])
+        .sortBy( "dateStart", "desc" )
+        .fetch()
+
+      return { ongoing, past, upcomming }
 
     } catch ( err ) {
       error({
@@ -86,7 +127,19 @@ export default {
         message: "Page could not be found",
       })
     }
-  }
+  },
+  filters: {
+    formatDate: function ( date ) {
+      const options = { year: "numeric", month: "numeric", day: "numeric" };
+      let formatted = new Date( date ).toLocaleDateString( "en", options );
+
+      if ( formatted != "Invalid Date" ) {
+        return formatted;
+      } else {
+        return date;
+      }
+    }
+  },
 }
 </script>
 

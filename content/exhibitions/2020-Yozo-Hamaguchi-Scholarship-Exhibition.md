@@ -2,7 +2,8 @@
 showTitle: 2020 Yozo Hamaguchi Scholarship Exhibition
 galleryName: CCA - Virtual
 
-date: "November 10, 2020"
+dateStart: 2020-11-10
+dateEnd: 2020-12-10
 location: "Virtual"
 
 more: https://libraries.cca.edu/exhibitions/2020-hamaguchi/

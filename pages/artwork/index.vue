@@ -22,6 +22,14 @@
             <h4><NuxtLink to="/artwork/archive">Archive</NuxtLink></h4>
           </li>
         </ul>
+
+        <hr class="secondary"></hr>
+
+        <ul class="layout-block">
+          <li>
+            <h4><NuxtLink to="/thesis-talk">Artist Talk</NuxtLink></h4>
+          </li>
+        </ul>
       </aside>
 
       <main class="layout-block">

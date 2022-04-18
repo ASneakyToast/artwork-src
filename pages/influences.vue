@@ -14,15 +14,16 @@
 
         <hr></hr>
 
-        <section class="layout-block">
-          <article v-for="influence of influences" :id="influence.id"
-                   class="layout-item">
-            <a :href="influence.link" target="_blank" rel="noopener noreferrer">
-              <h4>{{ influence.title }}</h4>
-            </a>
-            <p>{{ influence.description }}</p>
-          </article>
-        </section>
+        <ul class="layout-block">
+          <li v-for="influence of influences" :id="influence.id">
+            <article class="layout-item">
+              <a :href="influence.link" target="_blank" rel="noopener noreferrer">
+                <h4>{{ influence.title }}</h4>
+              </a>
+              <p>{{ influence.description }}</p>
+            </article>
+          </li>
+        </ul>
       </main>
 
 

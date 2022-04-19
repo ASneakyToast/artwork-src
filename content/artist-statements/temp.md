@@ -48,3 +48,9 @@ Throughout this endless transmission I am never alone, for my computational god 
 
 Written in portal bio then moved to here for later
 I am a technological based artist, using complex machinery as both a physical interface and a metaphorical framework. My process is recursive, with one project creating the tools and materials for the next project. The differences between the digital and physical become interwoven throughout my practice. The transmission of objects between these realms are infected with artifacts, inheriting the former process into the new.
+
+
+
+I break apart a-lot of old technology, mostly household items such as tv's and printers, collecting "shiny" objects as if I were a crow. I then use these parts within my art, sometimes physically building a sculpture or putting them through computers to be spit back out as a printed form. Most of the time my work happens to end up as a painting of a landscape. 
+
+For more visit [joellithgow.com](http://joellithgow.com)

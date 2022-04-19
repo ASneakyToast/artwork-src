@@ -12,8 +12,6 @@
         <h1>Exhibitions</h1>
       </section>
 
-      <p>{{ pastEx }}</p>
-
       <hr></hr>
 
       <main class="layout-section">
@@ -43,20 +41,29 @@
         <section v-if="upcommingEx.length > 0" class="layout-block">
           <h2>Upcomming</h2>
           <article v-for="exhibition of upcommingEx"
-                   :key="exhibition.id">
-            <NuxtLink :to="{ name: 'exhibitions-slug', params: { slug: exhibition.slug } }"
-                      class="layout-block card exhibition"
-                      :class="{ 'big-grid--featured': exhibition.featured }">
-              <section class="layout-item row">
+                   :key="exhibition.id"
+                   class="layout-block grid-plate">
+
+              <main class="layout-item card card--noshadow row">
                 <main class="layout-item">
                   <h3>{{ exhibition.showTitle }}</h3>
-                  <h5>@ {{ exhibition.galleryName }}</h5>
+                  <a :href="'//' + `www.googlemaps.com/maps/search/?api=1&query=${ exhibition.location }`" target="_blank" rel="noreferrer noopener">
+                    <h5>@ {{ exhibition.galleryName }}</h5>
+                  </a>
                 </main>
                 <aside class="item-right">
                   <p>{{ exhibition.dateStart | formatDate }} - {{ exhibition.dateEnd | formatDate }}</p>
                 </aside>
-              </section>
-            </NuxtLink>
+              </main>
+
+              <aside v-if="exhibition.calendar != undefined" class="layout-block">
+                <a :href="'//' + `${ exhibition.calendar }`" target="_blank" rel="noreferrer noopener">
+                  <article @click="saveCal" class="layout-block card">
+                    <h5>Save to Calendar</h5>
+                  </article>
+                </a>
+              </aside>
+              
           </article>
         </section>
 
@@ -96,55 +103,10 @@
 export default {
   async asyncData({ $content, params, error }) {
     try {
-      /*
-      const dateToday = new Date().getTime();
-      const dateToday = new Date().toISOString();
-      console.log( dateToday );
-
-      const dateToday = new Date().toISOString();
-      console.log( dateToday );
-
-      const test = await $content( "exhibitions" )
-        .where({ published: true })
-        .fetch()
-
-      console.log( test[ 4 ] );
-      console.log( test[ 4 ].dateStart );
-      console.log( typeof test[ 4 ].dateStart );
-      console.log( typeof dateToday );
-      //console.log( test[ 4 ].dateStart < dateToday );
-      //console.log( test[ 4 ].dateEnd > dateToday );
-      */
-      /*
-
-      const ongoing = await $content( "exhibitions" )
-        .where({ published: true })
-        .where({ dateStart: { $lt: dateToday }, dateEnd: { $gt: dateToday }}) //.where({ dateEnd: { $gt: dateToday } })
-        .only([ "showTitle", "description", "featured", "slug", "galleryName", "dateStart", "dateEnd", "location" ])
-        .sortBy( "dateStart", "desc" )
-        .fetch()
-
-
-      const past = await $content( "exhibitions" )
-        .where({ published: true })
-        .where({ dateStart: { $lt: dateToday } })
-        .where({ dateEnd: { $lt: dateToday } })
-        .only([ "showTitle", "description", "featured", "slug", "galleryName", "dateStart", "dateEnd", "location" ])
-        .sortBy( "dateStart", "desc" )
-        .fetch()
-
-      const upcomming = await $content( "exhibitions" )
-        .where({ published: true })
-        .where({ dateStart: { $gte: dateToday } })
-        .only([ "showTitle", "description", "featured", "slug", "galleryName", "dateStart", "dateEnd", "location" ])
-        .sortBy( "dateStart", "desc" )
-        .fetch()
-
-      */
 
       const exhibitions = await $content( "exhibitions" )
         .where({ published: true })
-        .only([ "showTitle", "description", "featured", "slug", "galleryName", "dateStart", "dateEnd", "location" ])
+        .only([ "showTitle", "calendar", "description", "featured", "slug", "galleryName", "dateStart", "dateEnd", "location" ])
         .sortBy( "dateStart", "desc" )
         .fetch()
       
@@ -161,15 +123,6 @@ export default {
   computed: { 
     pastEx: function () {
       let dateToday = new Date().toISOString();
-      let testDate = new Date( this.exhibitions.dateStart );
-      console.log( dateToday );
-      console.log( testDate );
-      console.log( this.exhibitions[ 0 ].dateStart );
-      console.log( typeof this.exhibitions[ 0 ].dateStart );
-      console.log( dateToday < this.exhibitions[ 0 ] );
-      //return this.exhibitions.filter( ex => ex.dateStart < dateToday );
-      //let ex = this.exhibitions.map( ex => ex.dateStart = new Date( ex.startDate ) );
-      //console.log( ex );
       return this.exhibitions.filter( ex => ex.dateStart < dateToday );
     },
     upcommingEx: function() {
@@ -193,6 +146,10 @@ export default {
       }
     }
   },
+  methods: {
+    saveCal: function() {
+    }
+  }
 }
 </script>
 

@@ -320,6 +320,19 @@ button {
   border: 1px solid #551A8B;
 }
 
+.card--noshadow {
+  box-shadow: none;
+}
+.card--noshadow:hover {
+  border: 1px solid lightgray;
+  box-shadow: none;
+  cursor: default;
+}
+.card--noshadow:visited {
+  box-shadow: none;
+  border: 1px solid lightgray;
+}
+
 .item-right {
   justify-self: right;
   text-align: right;

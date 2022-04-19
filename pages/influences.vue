@@ -2,7 +2,7 @@
   <div class="layout-site">
 
     <section class="layout-block">
-      <h5><NuxtLink to="/bio">Bio</NuxtLink></h5>
+      <h5><NuxtLink to="/">jlithgow.com</NuxtLink></h5>
     </section>
 
 

@@ -12,13 +12,15 @@
         <h1>Exhibitions</h1>
       </section>
 
+      <p>{{ pastEx }}</p>
+
       <hr></hr>
 
       <main class="layout-section">
 
-        <section v-if="ongoing.length > 0" class="layout-block">
+        <section v-if="ongoingEx.length > 0" class="layout-block">
           <h2>Ongoing</h2>
-          <article v-for="exhibition of ongoing"
+          <article v-for="exhibition of ongoingEx"
                    :key="exhibition.id">
             <NuxtLink :to="{ name: 'exhibitions-slug', params: { slug: exhibition.slug } }"
                       class="layout-block card exhibition"
@@ -36,11 +38,11 @@
           </article>
         </section>
 
-        <hr v-if="ongoing.length > 0 && upcomming.length > 0" class="secondary"></hr>
+        <hr v-if="ongoingEx.length > 0 && upcommingEx.length > 0" class="secondary"></hr>
 
-        <section v-if="upcomming.length > 0" class="layout-block">
+        <section v-if="upcommingEx.length > 0" class="layout-block">
           <h2>Upcomming</h2>
-          <article v-for="exhibition of upcomming"
+          <article v-for="exhibition of upcommingEx"
                    :key="exhibition.id">
             <NuxtLink :to="{ name: 'exhibitions-slug', params: { slug: exhibition.slug } }"
                       class="layout-block card exhibition"
@@ -60,9 +62,9 @@
 
         <hr class="secondary"></hr>
 
-        <section v-if="past" class="layout-block">
+        <section v-if="pastEx" class="layout-block">
           <h2>past</h2>
-          <article v-for="exhibition of past"
+          <article v-for="exhibition of pastEx"
                    :key="exhibition.id">
             <NuxtLink :to="{ name: 'exhibitions-slug', params: { slug: exhibition.slug } }"
                       class="layout-block card exhibition"
@@ -94,8 +96,8 @@
 export default {
   async asyncData({ $content, params, error }) {
     try {
-      const dateToday = new Date().getTime();
       /*
+      const dateToday = new Date().getTime();
       const dateToday = new Date().toISOString();
       console.log( dateToday );
 
@@ -113,6 +115,7 @@ export default {
       //console.log( test[ 4 ].dateStart < dateToday );
       //console.log( test[ 4 ].dateEnd > dateToday );
       */
+      /*
 
       const ongoing = await $content( "exhibitions" )
         .where({ published: true })
@@ -120,6 +123,7 @@ export default {
         .only([ "showTitle", "description", "featured", "slug", "galleryName", "dateStart", "dateEnd", "location" ])
         .sortBy( "dateStart", "desc" )
         .fetch()
+
 
       const past = await $content( "exhibitions" )
         .where({ published: true })
@@ -136,13 +140,45 @@ export default {
         .sortBy( "dateStart", "desc" )
         .fetch()
 
-      return { ongoing, past, upcomming }
+      */
+
+      const exhibitions = await $content( "exhibitions" )
+        .where({ published: true })
+        .only([ "showTitle", "description", "featured", "slug", "galleryName", "dateStart", "dateEnd", "location" ])
+        .sortBy( "dateStart", "desc" )
+        .fetch()
+      
+      //return { ongoing, past, upcomming, exhibitions }
+      return { exhibitions }
 
     } catch ( err ) {
       error({
         statusCode: 404,
         message: "Page could not be found",
       })
+    }
+  },
+  computed: { 
+    pastEx: function () {
+      let dateToday = new Date().toISOString();
+      let testDate = new Date( this.exhibitions.dateStart );
+      console.log( dateToday );
+      console.log( testDate );
+      console.log( this.exhibitions[ 0 ].dateStart );
+      console.log( typeof this.exhibitions[ 0 ].dateStart );
+      console.log( dateToday < this.exhibitions[ 0 ] );
+      //return this.exhibitions.filter( ex => ex.dateStart < dateToday );
+      //let ex = this.exhibitions.map( ex => ex.dateStart = new Date( ex.startDate ) );
+      //console.log( ex );
+      return this.exhibitions.filter( ex => ex.dateStart < dateToday );
+    },
+    upcommingEx: function() {
+      let dateToday = new Date().toISOString();
+      return this.exhibitions.filter( ex => ex.dateStart > dateToday );
+    },
+    ongoingEx: function() {
+      let dateToday = new Date().toISOString();
+      return this.exhibitions.filter( ex => ex.dateStart < dateToday && ex.dateEnd > dateToday );
     }
   },
   filters: {

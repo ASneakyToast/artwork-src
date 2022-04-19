@@ -22,6 +22,8 @@ collections:
 series:
 - Planeterrieans 
 
+photoAmount: 1
+
 featured: false
 published: true
 ---

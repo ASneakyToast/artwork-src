@@ -15,6 +15,8 @@ materials:
 tools:
 - lino blocks
 
+photoAmount: 1
+
 featured: false
 published: true
 ---

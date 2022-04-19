@@ -19,6 +19,8 @@ collections:
 exhibitions:
 - Snowcrashed
 
+photoAmount: 4
+
 featured: true
 published: true
 ---

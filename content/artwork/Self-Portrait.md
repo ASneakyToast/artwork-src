@@ -22,6 +22,8 @@ collections:
 exhibitions:
 - Press-Forward
 
+photoAmount: 1
+
 featured: false
 published: true
 ---

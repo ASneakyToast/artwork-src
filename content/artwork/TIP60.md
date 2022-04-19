@@ -20,6 +20,8 @@ tools:
 collections:
 - Screen-Paintings
 
+photoAmount: 1
+
 featured: false
 published: true
 ---

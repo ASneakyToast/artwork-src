@@ -20,6 +20,8 @@ tools:
 collections:
 - 2020 Portfolio
 
+photoAmount: 1
+
 featured: false
 published: true
 ---

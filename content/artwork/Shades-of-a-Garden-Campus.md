@@ -20,6 +20,8 @@ tools:
 exhibitions:
 - Fluid-Mutualism
 
+photoAmount: 4
+
 featured: true
 published: true
 ---

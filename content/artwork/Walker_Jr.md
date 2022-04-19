@@ -19,6 +19,8 @@ tools:
 
 series: Circuitures
 
+photoAmount: 1
+
 featured: false
 published: false
 ---

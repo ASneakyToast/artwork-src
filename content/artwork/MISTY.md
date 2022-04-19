@@ -18,6 +18,8 @@ tools:
 collections:
 - 2021 Portfolio
 
+photoAmount: 2
+
 featured: false
 published: true
 ---

@@ -21,6 +21,8 @@ series: Circuitures
 exhibitions:
 - 2020-Yozo-Hamaguchi-Scholarship-Exhibition
 
+photoAmount: 1
+
 featured: false
 published: false
 ---

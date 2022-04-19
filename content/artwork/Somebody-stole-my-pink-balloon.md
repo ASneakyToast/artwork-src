@@ -28,6 +28,8 @@ exhibitions:
 - Interface show - Fall 2021
 - CCA Oakland Campus Men's Bathroom - Fall 2021
 
+photoAmount: 1
+
 featured: false
 published: true
 ---

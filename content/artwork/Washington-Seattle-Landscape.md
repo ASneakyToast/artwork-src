@@ -18,6 +18,8 @@ materials:
 exhibitions:
 - Snowcrashed
 
+photoAmount: 1
+
 featured: true
 published: true
 ---

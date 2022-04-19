@@ -19,6 +19,8 @@ collections:
 - Screen-Paintings
 - 2021 Portfolio
 
+photoAmount: 1
+
 featured: false
 published: true
 ---

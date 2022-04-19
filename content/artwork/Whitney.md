@@ -23,6 +23,8 @@ collections:
 exhibitions:
 - Hamagucchi-2020
 
+photoAmount: 1
+
 featured: false
 published: true
 ---

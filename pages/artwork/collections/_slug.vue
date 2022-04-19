@@ -40,11 +40,7 @@
             :key="artwork.id"
             :id="artwork.slug">
           <aside class="item-center">
-            <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
-              <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
-                   :alt="artwork.alt"
-                   :title="artwork.alt" />
-            </NuxtLink>
+            <ArtworkPhotos :artwork="artwork" />
           </aside>
           <main class="layout-item well">
             <header>
@@ -87,7 +83,7 @@ export default {
 
       const artworks = await $content( "artwork" )
         .where({ collections: { $contains: params.slug } })
-        .only([ "id", "title", "slug", "date", "flavor" ])
+        .only([ "id", "title", "photoAmount", "slug", "date", "flavor" ])
         .sortBy( "title", "asc" )
         .fetch()
 

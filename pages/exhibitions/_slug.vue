@@ -74,7 +74,7 @@
                    id="artworks">
             <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }"
                       class="layout-item">
-              <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
+              <img :srcset="require( `~/assets/artwork/${ artwork.slug }/photo-1.jpg` ).srcSet"
                     :alt="artwork.alt"
                     :title="artwork.alt">
               <p class="item-center">{{ artwork.title }}</p>

@@ -41,11 +41,7 @@
             :key="artwork.id"
             :id="artwork.slug">
           <aside class="item-center">
-            <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
-              <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
-                   :alt="artwork.alt"
-                   :title="artwork.alt" />
-            </NuxtLink>
+            <ArtworkPhotos :artwork="artwork" />
           </aside>
           <main class="layout-item well">
             <header>

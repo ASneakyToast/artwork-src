@@ -35,7 +35,7 @@
       <main class="layout-block">
         <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
           <article class="layout-item">
-            <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
+            <img :srcset="require( `~/assets/artwork/${ artwork.slug }/photo-1.jpg` ).srcSet"
                  alt="A photo of Joel Lithgow making art."
                  title="Joel Lithgow"
                  class="cover">

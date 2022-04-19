@@ -17,7 +17,7 @@
                  :key="collection.id">
           <NuxtLink :to="{ name: 'artwork-collections-slug', params: { slug: collection.slug } }"
                     class="layout-block collection">
-            <img :srcset="require( `~/assets/artwork/${ collection.associatedArtwork.slug }/original.jpg` ).srcSet"
+            <img :srcset="require( `~/assets/artwork/${ collection.associatedArtwork.slug }/photo-1.jpg` ).srcSet"
                  class="square">
             <h3 class="item-center">{{ collection.title }}</h3>
           </NuxtLink>

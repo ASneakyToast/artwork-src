@@ -28,11 +28,7 @@
         </section>
         -->
 
-        <section class="item-center">
-          <img :srcset="require( `~/assets/artwork/${ artwork.slug }/original.jpg` ).srcSet"
-                :alt="artwork.alt"
-                :title="artwork.alt">
-        </section>
+        <ArtworkPhotos :artwork="artwork" />
 
       </section>
 
@@ -174,7 +170,7 @@ export default {
       const options = { year: "numeric", month: "numeric", day: "numeric" };
       return new Date( date ).toLocaleDateString( "en", options );
     }
-  },
+  }
 }
 </script>
 

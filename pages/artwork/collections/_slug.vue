@@ -82,7 +82,7 @@ export default {
     try {
 
       const artworks = await $content( "artwork" )
-        .where({ collections: { $contains: params.slug } })
+        .where({ collections: { $contains: params.slug }, published: true })
         .only([ "id", "title", "photoAmount", "slug", "date", "flavor" ])
         .sortBy( "title", "asc" )
         .fetch()

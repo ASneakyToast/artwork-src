@@ -96,7 +96,7 @@ export default{
     try {
 
       const artworks = await $content({ deep: true })
-        .where({ dir: `/artwork` })
+        .where({ dir: `/artwork`, published: true })
         .only([ "title", "slug", "collections", "date" ])
         //.sortBy( "title", "asc" )
         .sortBy( "date", "desc" )

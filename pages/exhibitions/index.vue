@@ -136,8 +136,8 @@ export default {
   },
   filters: {
     formatDate: function ( date ) {
-      const options = { year: "numeric", month: "numeric", day: "numeric" };
-      let formatted = new Date( date ).toLocaleDateString( "en", options );
+      const options = { year: "numeric", month: "numeric", day: "numeric", timeZone: "UTC" };
+      let formatted = new Date( date ).toLocaleDateString( "en-US", options );
 
       if ( formatted != "Invalid Date" ) {
         return formatted;

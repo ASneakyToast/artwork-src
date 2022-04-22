@@ -23,13 +23,15 @@
           </li>
         </ul>
 
-        <hr class="secondary"></hr>
+        <!--
+          <hr class="secondary"></hr>
 
-        <ul class="layout-block">
-          <li>
-            <h4><NuxtLink to="/thesis-talk">Artist Talk</NuxtLink></h4>
-          </li>
-        </ul>
+          <ul class="layout-block">
+            <li>
+              <h4><NuxtLink to="/thesis-talk">Artist Talk</NuxtLink></h4>
+            </li>
+          </ul>
+        -->
       </aside>
 
       <main class="layout-block">

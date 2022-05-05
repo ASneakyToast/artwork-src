@@ -19,6 +19,9 @@ tools:
 - sandpaper
 - brush
 
+collections:
+- Stamp-Paintings
+
 photoAmount: 1
 
 featured: true

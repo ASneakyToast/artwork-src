@@ -35,7 +35,7 @@ export default {
         .limit( 1 )
         .fetch();
       */
-      const statement = await $content( "artist-statements", "apr-17-2022" ).fetch();
+      const statement = await $content( "artist-statements", "may-09-2022" ).fetch();
 
       return { statement }
 

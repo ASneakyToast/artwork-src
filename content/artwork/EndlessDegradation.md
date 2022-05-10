@@ -6,7 +6,7 @@ alt: A sculpture made up of plastic shells from electronics covered in red / ora
 flavor: ...
 
 date: 2022-03-23
-size: 3' x 3' x 5'
+size: 15" x 12.5" x 54"
 
 medium: Sculpture
 materials:
@@ -18,6 +18,7 @@ materials:
 - leftover screen printing ink
 tools:
 - power drill
+- blender
 
 photoAmount: 3
 

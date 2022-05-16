@@ -138,7 +138,7 @@ export default {
       const experiences = await $content( "experiences" )
         .where({ published: true })
         .only([ "id", "title", "description", "organization", "location", "slug", "startDate", "endDate"  ])
-        .sortBy( "startDate", "asc" )
+        .sortBy( "startDate", "desc" )
         .fetch()
 
       const awards = await $content( "awards" )
@@ -150,7 +150,7 @@ export default {
       const education = await $content( "education" )
         .where({ published: true })
         //.only([ "id", "title", "slug", "startDate", "endDate"  ])
-        .sortBy( "startDate", "asc" )
+        .sortBy( "startDate", "desc" )
         .fetch()
 
       const exhibitions = await $content( "exhibitions" )

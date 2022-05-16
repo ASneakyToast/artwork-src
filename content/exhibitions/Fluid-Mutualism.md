@@ -1,6 +1,7 @@
 ---
 showTitle: CCA@CCA Fluid Mutualism Symposium Exhibition
 galleryName: CCA - Nave
+description: A grant to make work for a week-long exhibition in CCA’s main campus.
 
 dateStart: 2022-02-28
 dateEnd: 2022-03-04

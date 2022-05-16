@@ -1,6 +1,7 @@
 ---
 showTitle: "Snowcrashed : Joel Lithgow"
 galleryName: Hubble Street Galleries
+description: A solo show centered around the overstimulation of technology usage.
 
 dateStart: 2022-04-06
 dateEnd: 2022-04-08

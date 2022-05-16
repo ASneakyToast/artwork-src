@@ -1,6 +1,7 @@
 ---
 showTitle: "The Next Stop"
 galleryName: Book/Shop
+description: A group show of work made during the last semester at CCA's Oakland campus.
 
 dateStart: 2022-05-13
 dateEnd: 2022-06-13

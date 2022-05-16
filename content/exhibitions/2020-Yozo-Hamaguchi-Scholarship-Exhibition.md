@@ -2,6 +2,8 @@
 showTitle: 2020 Yozo Hamaguchi Scholarship Exhibition
 galleryName: CCA - Virtual
 
+description: A scholarship for exceptional printmedia work.
+
 dateStart: 2020-11-10
 dateEnd: 2020-12-10
 location: "Virtual"

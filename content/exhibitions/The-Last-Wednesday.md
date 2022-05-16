@@ -1,6 +1,7 @@
 ---
 showTitle: The Last Wednesday
 galleryName: CCA Oakland Campus
+description: An event hosted by CCA to bid farewall to the Oakland Campus.
 
 dateStart: 2022-04-27
 dateEnd: 2022-05-05

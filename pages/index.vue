@@ -29,7 +29,7 @@
             <h3><NuxtLink to="/bio">Bio</NuxtLink></h3>
           </section>
           <section class="layout-item">
-            <h3><NuxtLink to="/cv">cv</NuxtLink></h3>
+            <h3><NuxtLink to="/cv">CV</NuxtLink></h3>
           </section>
         </section>
 

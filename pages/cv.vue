@@ -76,7 +76,7 @@
           <ul class="layout-block">
             <li v-for="award of awards"
                      id="award.id">
-              <a :href="award.link">
+              <a target="_blank" rel="noopener noreferrer" :href="award.link">
                 <p class="label"><b>{{ award.title }}</b></p>
               </a>
             </li>
@@ -100,15 +100,15 @@
 
       </main>
 
-      <aside class="layout-page">
+      <aside class="">
         <section id="contact" class="layout-section">
           <article class="layout-item">
             <p class="label"><b>email</b></p>
-            <a href="mailto:joelnotlithgow@gmail.com"><p>joelnotlithgow@gmail.com</p></a>
+            <a target="_blank" rel="noopener noreferrer" href="mailto:joelnotlithgow@gmail.com"><p>joelnotlithgow@gmail.com</p></a>
           </article>
           <article class="layout-item">
             <p class="label"><b>instagram</b></p>
-            <a href="https://www.instagram.com/joellithgow"target="_blank" rel="noreferrer noopener"><p>joellithgow</p></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/joellithgow"><p>joellithgow</p></a>
           </article>
         </section>
 

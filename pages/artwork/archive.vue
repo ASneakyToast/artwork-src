@@ -63,13 +63,17 @@
             <h3>{{ unique_years[ index ] }}</h3>
           </aside>
           <main>
-            <ul class="layout-item">
-              <li v-for="artwork of year"
-                  :key="artwork.id">
+            <ul class="artworks">
+              <article v-for="artwork of year"
+                       :key="artwork.id"
+                       class="artworks__item">
                 <NuxtLink :to="{ name: 'artwork-slug', params: { slug: artwork.slug } }">
-                  {{ artwork.title }}
+                  <p>{{ artwork.title }}</p>
+                  <img :srcset="require( `~/assets/artwork/${ artwork.slug }/photo-1.jpg` ).srcSet"
+                       :alt="artwork.alt"
+                       :title="artwork.alt" />
                 </NuxtLink>
-              </li>
+              </article>
             </ul>
           </main>
         </section>
@@ -175,5 +179,13 @@ export default{
 }
 </script>
 
-<style>
+<style scoped>
+.artworks {
+  columns: 3;
+  break-inside: avoid-column;
+}
+
+.artworks__item {
+  break-inside: avoid-column;
+}
 </style>

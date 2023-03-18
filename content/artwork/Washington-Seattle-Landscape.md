@@ -20,6 +20,6 @@ exhibitions:
 
 photoAmount: 1
 
-featured: true
+featured: false
 published: true
 ---

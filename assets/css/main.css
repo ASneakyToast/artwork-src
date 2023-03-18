@@ -253,7 +253,7 @@ button.secondary:hover {
   }
 
   .layout-page {
-    padding: 64px;
+    padding: 64px 128px;
     display: grid;
     grid-gap: 64px;
     grid-auto-rows: min-content;

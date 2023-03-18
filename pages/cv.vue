@@ -10,7 +10,7 @@
 
       <main id="resume" class="layout-page">
         <section class="layout-section">
-          <p class="detail">cv. {{ new Date | formatDate }}</p>
+          <p class="detail">cv. 2022</p>
         </section>
 
         <section class="layout-section">
